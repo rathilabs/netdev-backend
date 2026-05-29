@@ -42,11 +42,11 @@ class PacketInjector:
             # Create a raw socket with IP_HDRINCL to provide our own IP header
             self.socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_RAW)
             self.socket.setsockopt(socket.IPPROTO_IP, socket.IP_HDRINCL, 1)
-            logger.info("Raw socket initialized successfully.")
+            logger.debug("Raw socket ready.")
         except PermissionError:
-            logger.error("Permission Denied: Raw sockets require root/administrator privileges.")
+            logger.error("Permission denied: root required.")
         except Exception as e:
-            logger.error(f"Failed to initialize raw socket: {e}")
+            logger.error(f"Socket error: {e}")
 
     def create_ip_header(self, src_ip: str, dst_ip: str, protocol: int, length: int) -> bytes:
         """
@@ -151,7 +151,7 @@ class PacketInjector:
         if not self.socket:
             if protocol_str == 'UDP':
                 try:
-                    logger.info("Raw socket unavailable. Falling back to standard UDP socket.")
+                    logger.info("Raw socket unavailable; using UDP fallback.")
                     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as fallback_sock:
                         fallback_sock.sendto(payload, (dst_ip, dst_port))
                     return True, "Injected via kernel fallback (standard UDP)"

@@ -17,7 +17,7 @@ class PacketServer:
     and communicates with the underlying PacketInjector engine.
     """
     
-    def __init__(self, host: str = "0.0.0.0", port: int = 8001, log_dir: Optional[str] = None):
+    def __init__(self, host: str = "127.0.0.1", port: int = 8001, log_dir: Optional[str] = None):
         self.host = host
         self.port = port
         self.injector = PacketInjector()
@@ -30,8 +30,8 @@ class PacketServer:
             os.makedirs(log_dir)
             
         self.history_file = os.path.join(log_dir, "packet_history.jsonl")
-        logger.info(f"PacketServer initialized. Listening on {host}:{port}")
-        logger.info(f"Audit log history stored in: {self.history_file}")
+        logger.info(f"Server listening on {host}:{port}")
+        logger.info(f"Audit log: {self.history_file}")
 
     def save_history(self, config: dict, status: str, message: str) -> None:
         """Persists a packet injection event to a JSONL audit trail file."""
@@ -44,22 +44,22 @@ class PacketServer:
         try:
             with open(self.history_file, "a") as f:
                 f.write(json.dumps(log_entry) + "\n")
-            logger.debug(f"History entry recorded with status: {status}")
+            logger.debug(f"History saved: {status}")
         except Exception as e:
-            logger.error(f"Failed to append to history log: {e}")
+            logger.error(f"Audit log error: {e}")
 
     async def handle_client(self, websocket) -> None:
         """Main connection handler managing incoming WebSocket request streams."""
         remote_addr = getattr(websocket, 'remote_address', 'Unknown')
-        logger.info(f"Client session initiated from {remote_addr}")
+        logger.debug(f"Session started: {remote_addr}")
         
         try:
             async for raw_message in websocket:
-                logger.debug(f"Received data block: {raw_message[:200]}")
+                logger.debug(f"Data received from {remote_addr}")
                 try:
                     data = json.loads(raw_message)
                     command = data.get("command")
-                    logger.info(f"Processing command '{command}' from {remote_addr}")
+                    logger.debug(f"Command '{command}' from {remote_addr}")
                     
                     response = await self.dispatch_command(command, data, remote_addr)
                     
@@ -67,15 +67,15 @@ class PacketServer:
                         await websocket.send(json.dumps(response))
                         
                 except json.JSONDecodeError:
-                    logger.error(f"Malformed JSON received from {remote_addr}")
+                    logger.error(f"JSON error from {remote_addr}")
                     await websocket.send(json.dumps({
                         "status": "ERROR",
                         "message": "Invalid JSON format"
                     }))
         except websockets.exceptions.ConnectionClosed:
-            logger.info(f"Client session closed: {remote_addr}")
+            logger.debug(f"Session closed: {remote_addr}")
         except Exception as e:
-            logger.exception(f"Unexpected error handling client {remote_addr}: {e}")
+            logger.exception(f"Handler error ({remote_addr}): {e}")
 
     async def dispatch_command(self, command: str, data: dict, remote_addr: Any) -> Optional[dict]:
         """
@@ -110,7 +110,7 @@ class PacketServer:
             }
 
         elif command == "CLEAR_LOGS":
-            logger.warning(f"Client {remote_addr} triggered persistent log deletion.")
+            logger.warning(f"History wipe requested by {remote_addr}")
             if os.path.exists(self.history_file):
                 os.remove(self.history_file)
             return {
@@ -122,7 +122,7 @@ class PacketServer:
             return {"status": "PONG"}
             
         else:
-            logger.error(f"Unrecognized command context received: {command}")
+            logger.error(f"Unknown command: {command}")
             return {
                 "status": "ERROR",
                 "message": f"Unknown command scope: {command}"
@@ -131,5 +131,5 @@ class PacketServer:
     async def start(self) -> None:
         """Starts the WebSocket event loop engine."""
         async with websockets.serve(self.handle_client, self.host, self.port):
-            logger.info(f"WebSocket engine running live at ws://{self.host}:{self.port}")
+            logger.info(f"WebSocket live at ws://{self.host}:{self.port}")
             await asyncio.Future() # Keep running indefinitely
