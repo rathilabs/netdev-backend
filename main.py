@@ -14,8 +14,9 @@ def setup_logging():
     log_file = os.path.join(log_dir, "netdev_server.log")
     
     # Root Logger Configuration
+    log_level = os.environ.get("LOG_LEVEL", "INFO").upper()
     root_logger = logging.getLogger()
-    root_logger.setLevel(logging.INFO)
+    root_logger.setLevel(getattr(logging, log_level, logging.INFO))
     
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
     
@@ -34,18 +35,19 @@ async def main():
     setup_logging()
     logger = logging.getLogger("NetDev.Main")
     
-    logger.info("--- NetDev Pro Backend Engine Starting ---")
+    logger.info("Engine starting...")
+    logger.debug("Debug mode active.")
     
     server = PacketServer(host="0.0.0.0", port=8001)
     
     try:
         await server.start()
     except KeyboardInterrupt:
-        logger.info("Shutdown signal received (Ctrl+C).")
+        logger.info("Shutdown signal received.")
     except Exception as e:
         logger.critical(f"Engine failure: {e}", exc_info=True)
     finally:
-        logger.info("--- NetDev Pro Backend Engine Stopped ---")
+        logger.info("Engine stopped.")
 
 if __name__ == "__main__":
     try:
