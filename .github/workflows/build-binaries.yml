@@ -16,8 +16,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-20.04, ubuntu-22.04, ubuntu-24.04, macos-13, macos-14, macos-15]
-        python-version: ['3.9', '3.10', '3.11', '3.12', '3.13']
+        os: [ubuntu-22.04, ubuntu-24.04, macos-15]
+        python-version: ['3.10', '3.11', '3.12', '3.13']
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -40,35 +40,23 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: ubuntu-20.04
+          - os: ubuntu-22.04
             arch: x64
             binary_name: backend-linux-x64
-            container: python:3.9-slim-buster
           - os: ubuntu-24.04-arm
             arch: arm64
             binary_name: backend-linux-arm64
-            container: python:3.9-slim-buster
-          - os: macos-13
-            arch: x64
-            binary_name: backend-macos-x64
-          - os: macos-14
+          - os: macos-15
             arch: arm64
             binary_name: backend-macos-arm64
     runs-on: ${{ matrix.os }}
-    container: ${{ matrix.container }}
     steps:
-      - name: Install build tools in container
-        if: matrix.container != ''
-        run: |
-          apt-get update && apt-get install -y binutils gcc
-      
       - uses: actions/checkout@v4
 
       - name: Set up Python
-        if: matrix.container == ''
         uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.10'
 
       - name: Install dependencies
         run: |
