@@ -8,13 +8,28 @@ from logging.handlers import TimedRotatingFileHandler
 
 def setup_logging():
     """Configures a professional rotating log system for the backend."""
-    log_dir = os.path.join(os.path.dirname(__file__), "logs")
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-        
+    # Attempt to use local logs directory
+    log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
+
+    try:
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir)
+    except OSError:
+        # Fallback for single binary or read-only environments
+        log_dir = "/tmp/nettools-logs"
+        if not os.path.exists(log_dir):
+            try:
+                os.makedirs(log_dir)
+            except OSError:
+                # Last resort: current working directory
+                log_dir = os.path.join(os.getcwd(), "logs")
+                if not os.path.exists(log_dir):
+                    os.makedirs(log_dir, exist_ok=True)
+
     date_str = datetime.datetime.now().strftime("%Y-%m-%d")
     log_file = os.path.join(log_dir, f"server_{date_str}.log")
-    
+    ...
+
     # Root Logger Configuration
     log_level = os.environ.get("LOG_LEVEL", "INFO").upper()
     root_logger = logging.getLogger()
