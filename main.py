@@ -3,31 +3,16 @@ import logging
 import sys
 import os
 import datetime
-from src import PacketServer
+from src import PacketServer, get_log_dir
 from logging.handlers import TimedRotatingFileHandler
 
 def setup_logging():
     """Configures a professional rotating log system for the backend."""
-    # Attempt to use local logs directory
-    log_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs")
-
-    try:
-        if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
-    except OSError:
-        # Fallback for single binary or read-only environments
-        log_dir = "/tmp/nettools-logs"
-        if not os.path.exists(log_dir):
-            try:
-                os.makedirs(log_dir)
-            except OSError:
-                # Last resort: current working directory
-                log_dir = os.path.join(os.getcwd(), "logs")
-                if not os.path.exists(log_dir):
-                    os.makedirs(log_dir, exist_ok=True)
+    log_dir = get_log_dir()
 
     date_str = datetime.datetime.now().strftime("%Y-%m-%d")
     log_file = os.path.join(log_dir, f"server_{date_str}.log")
+
     ...
 
     # Root Logger Configuration

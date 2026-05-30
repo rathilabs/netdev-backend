@@ -7,6 +7,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from typing import Optional, Any
 from .injector import PacketInjector
+from .utils import get_log_dir
 
 logger = logging.getLogger("NetDev.Server")
 
@@ -23,27 +24,7 @@ class PacketServer:
         self.injector = PacketInjector()
         
         # Determine logs directory
-        if log_dir is None:
-            # Attempt local logs directory
-            self.log_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "logs")
-            try:
-                if not os.path.exists(self.log_dir):
-                    os.makedirs(self.log_dir)
-            except OSError:
-                # Fallback for single binary or read-only environments
-                self.log_dir = "/tmp/nettools-logs"
-                if not os.path.exists(self.log_dir):
-                    try:
-                        os.makedirs(self.log_dir)
-                    except OSError:
-                        # Last resort: current working directory
-                        self.log_dir = os.path.join(os.getcwd(), "logs")
-                        if not os.path.exists(self.log_dir):
-                            os.makedirs(self.log_dir, exist_ok=True)
-        else:
-            self.log_dir = log_dir
-            if not os.path.exists(self.log_dir):
-                os.makedirs(self.log_dir, exist_ok=True)
+        self.log_dir = log_dir if log_dir else get_log_dir()
             
         logger.info(f"Server listening on {host}:{port}")
         logger.info(f"Log directory: {self.log_dir}")
