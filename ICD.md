@@ -61,8 +61,8 @@ Retrieves the last 500 entries from the persistent history file.
 }
 ```
 
-### 4.3 `CLEAR_LOGS`
-Wipes the persistent history file on the backend.
+### 4.3 CLEAR_LOGS
+Deletes all log files in the `logs` folder on the backend.
 
 **Structure**:
 ```json
@@ -71,7 +71,39 @@ Wipes the persistent history file on the backend.
 }
 ```
 
-### 4.4 `PING`
+### 4.4 LIST_LOGS
+Retrieves a list of all log files stored on the server.
+
+**Structure**:
+```json
+{
+  "command": "LIST_LOGS"
+}
+```
+
+### 4.5 READ_LOG
+Reads the full content of a specific log file.
+
+**Structure**:
+```json
+{
+  "command": "READ_LOG",
+  "filename": "server_2026-05-30.log"
+}
+```
+
+### 4.6 DELETE_LOG
+Deletes a specific log file from the server.
+
+**Structure**:
+```json
+{
+  "command": "DELETE_LOG",
+  "filename": "server_2026-05-30.log"
+}
+```
+
+### 4.7 PING
 Heartbeat check.
 
 **Structure**:
@@ -86,7 +118,7 @@ Heartbeat check.
 ## 5. Message Structure (Backend to Frontend)
 
 ### 5.1 General Response
-Sent for `SEND_PACKET`, `CLEAR_LOGS`, and unknown commands.
+Sent for `SEND_PACKET`, `CLEAR_LOGS`, `DELETE_LOG`, and unknown commands.
 
 **Structure**:
 ```json
@@ -98,7 +130,7 @@ Sent for `SEND_PACKET`, `CLEAR_LOGS`, and unknown commands.
 ```
 
 ### 5.2 `FETCH_LOGS` Response
-Returns an array of log entries.
+Returns an array of packet history entries for the current day.
 
 **Structure**:
 ```json
@@ -116,7 +148,48 @@ Returns an array of log entries.
 }
 ```
 
-### 5.3 `PING` Response (`PONG`)
+### 5.3 `LIST_LOGS` Response
+Returns an array of file metadata.
+
+**Structure**:
+```json
+{
+  "status": "SUCCESS",
+  "command": "LIST_LOGS",
+  "data": [
+    {
+      "name": "string",
+      "size": number,
+      "modified": "ISO-8601 string"
+    }
+  ]
+}
+```
+
+### 5.4 `READ_LOG` Response
+Returns the content of the requested log file.
+
+**Structure**:
+```json
+{
+  "status": "SUCCESS",
+  "command": "READ_LOG",
+  "filename": "string",
+  "data": "string (raw file content)"
+}
+```
+
+### 5.5 `DELETE_LOG` Response
+**Structure**:
+```json
+{
+  "status": "SUCCESS",
+  "command": "DELETE_LOG",
+  "message": "string"
+}
+```
+
+### 5.6 `PING` Response (`PONG`)
 **Structure**:
 ```json
 {
@@ -124,7 +197,7 @@ Returns an array of log entries.
 }
 ```
 
-### 5.4 Error Response
+### 5.6 Error Response
 Sent when invalid JSON is received.
 
 **Structure**:
