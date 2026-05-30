@@ -33,14 +33,14 @@ The NetDevs Pro Backend is a high-performance, asynchronous Python service desig
 ## 🛠️ Getting Started
 
 ### Prerequisites
-- Python 3.10+
-- `websockets` library
+- Python 3.9+
+- `pip`
 
 ### Installation
 ```bash
 git clone https://github.com/rathilabs/netdev-backend.git
 cd netdev-backend
-pip install websockets
+pip install -r requirements.txt
 ```
 
 ### Running the Server
