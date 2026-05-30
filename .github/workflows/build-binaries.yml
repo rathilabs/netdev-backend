@@ -2,8 +2,6 @@ name: Build and Release Backend Binaries
 
 on:
   push:
-    branches:
-      - main
     tags:
       - 'v*'
   pull_request:
@@ -36,6 +34,7 @@ jobs:
   build:
     name: Build for ${{ matrix.os }} (${{ matrix.arch }})
     needs: test
+    if: startsWith(github.ref, 'refs/tags/')
     strategy:
       fail-fast: false
       matrix:
@@ -78,7 +77,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/main'
+    if: startsWith(github.ref, 'refs/tags/')
     steps:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
@@ -90,9 +89,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: artifacts/*
-          tag_name: ${{ github.ref_name == 'main' && format('latest-{0}', github.sha) || github.ref_name }}
-          name: ${{ github.ref_name == 'main' && 'Latest Build' || format('Release {0}', github.ref_name) }}
+          tag_name: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
           draft: false
-          prerelease: ${{ github.ref_name == 'main' }}
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
