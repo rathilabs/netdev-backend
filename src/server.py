@@ -24,14 +24,20 @@ class PacketServer:
         
         # Determine logs directory (default to root-level logs)
         if log_dir is None:
-            log_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs")
+            self.log_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "logs")
+        else:
+            self.log_dir = log_dir
             
-        if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
+        if not os.path.exists(self.log_dir):
+            os.makedirs(self.log_dir)
             
-        self.history_file = os.path.join(log_dir, "packet_history.jsonl")
         logger.info(f"Server listening on {host}:{port}")
-        logger.info(f"Audit log: {self.history_file}")
+        logger.info(f"Log directory: {self.log_dir}")
+
+    def get_current_history_file(self) -> str:
+        """Returns the history file path for the current date."""
+        date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+        return os.path.join(self.log_dir, f"history_{date_str}.jsonl")
 
     def save_history(self, config: dict, status: str, message: str) -> None:
         """Persists a packet injection event to a JSONL audit trail file."""
@@ -42,7 +48,8 @@ class PacketServer:
             "message": message
         }
         try:
-            with open(self.history_file, "a") as f:
+            history_file = self.get_current_history_file()
+            with open(history_file, "a") as f:
                 f.write(json.dumps(log_entry) + "\n")
             logger.debug(f"History saved: {status}")
         except Exception as e:
@@ -96,9 +103,10 @@ class PacketServer:
             }
             
         elif command == "FETCH_LOGS":
+            history_file = self.get_current_history_file()
             logs = []
-            if os.path.exists(self.history_file):
-                with open(self.history_file, "r") as f:
+            if os.path.exists(history_file):
+                with open(history_file, "r") as f:
                     lines = f.readlines()
                     # Return last 500 logs to prevent payload overflow
                     logs = [json.loads(line) for line in lines[-500:]]
@@ -109,13 +117,65 @@ class PacketServer:
                 "data": logs[::-1] # Sort newest first
             }
 
-        elif command == "CLEAR_LOGS":
-            logger.warning(f"History wipe requested by {remote_addr}")
-            if os.path.exists(self.history_file):
-                os.remove(self.history_file)
+        elif command == "LIST_LOGS":
+            files = []
+            for f in os.listdir(self.log_dir):
+                path = os.path.join(self.log_dir, f)
+                if os.path.isfile(path):
+                    stats = os.stat(path)
+                    files.append({
+                        "name": f,
+                        "size": stats.st_size,
+                        "modified": datetime.datetime.fromtimestamp(stats.st_mtime).isoformat()
+                    })
+            # Sort by modified date recent first
+            files.sort(key=lambda x: x["modified"], reverse=True)
             return {
                 "status": "SUCCESS",
-                "message": "Persistent history wiped successfully."
+                "command": "LIST_LOGS",
+                "data": files
+            }
+
+        elif command == "READ_LOG":
+            filename = data.get("filename")
+            if not filename:
+                return {"status": "ERROR", "message": "Filename missing"}
+            
+            # Basic security check to prevent path traversal
+            if ".." in filename or "/" in filename or "\\" in filename:
+                return {"status": "ERROR", "message": "Invalid filename"}
+            
+            path = os.path.join(self.log_dir, filename)
+            if not os.path.exists(path):
+                return {"status": "ERROR", "message": "File not found"}
+            
+            try:
+                with open(path, "r") as f:
+                    # Return content (could be large, but usually okay for logs)
+                    content = f.read()
+                    return {
+                        "status": "SUCCESS",
+                        "command": "READ_LOG",
+                        "filename": filename,
+                        "data": content
+                    }
+            except Exception as e:
+                return {"status": "ERROR", "message": str(e)}
+
+        elif command == "CLEAR_LOGS":
+            logger.warning(f"Full log wipe requested by {remote_addr}")
+            count = 0
+            for f in os.listdir(self.log_dir):
+                path = os.path.join(self.log_dir, f)
+                try:
+                    if os.path.isfile(path):
+                        os.remove(path)
+                        count += 1
+                except Exception as e:
+                    logger.error(f"Failed to delete {f}: {e}")
+            return {
+                "status": "SUCCESS",
+                "message": f"All {count} log files deleted successfully."
             }
             
         elif command == "PING":

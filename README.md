@@ -32,33 +32,32 @@ The NetDevs Pro Backend is a high-performance, asynchronous Python service desig
 
 ## 🛠️ Getting Started
 
-### Prerequisites
-- Python 3.10+
-- `pip`
+### Option 1: Download Pre-compiled Binary (Easiest)
+1. Go to the [Releases](https://github.com/rathilabs/netdev-backend/releases) page.
+2. Download the binary for your OS (Linux/macOS).
+3. Run with root privileges:
+   ```bash
+   sudo ./netdev-server
+   ```
 
-### Installation
-```bash
-git clone https://github.com/rathilabs/netdev-backend.git
-cd netdev-backend
-pip install -r requirements.txt
-```
-
-### Running the Server
-Raw sockets require **Root/Administrator** privileges.
-
-**Linux / macOS:**
-```bash
-sudo python3 main.py
-```
-
-**Windows (Admin PowerShell):**
-```bash
-python main.py
-```
+### Option 2: Run from Source
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/rathilabs/netdev-backend.git
+   cd netdev-backend
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run with root privileges:
+   ```bash
+   sudo python3 main.py
+   ```
 
 ---
 
-## 🤝 Contributing
+## 📂 Project Structure
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to get started, our coding standards, and the pull request process.
 

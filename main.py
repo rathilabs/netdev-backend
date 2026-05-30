@@ -2,8 +2,9 @@ import asyncio
 import logging
 import sys
 import os
+import datetime
 from src import PacketServer
-from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 
 def setup_logging():
     """Configures a professional rotating log system for the backend."""
@@ -11,7 +12,8 @@ def setup_logging():
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
         
-    log_file = os.path.join(log_dir, "netdev_server.log")
+    date_str = datetime.datetime.now().strftime("%Y-%m-%d")
+    log_file = os.path.join(log_dir, f"server_{date_str}.log")
     
     # Root Logger Configuration
     log_level = os.environ.get("LOG_LEVEL", "INFO").upper()
@@ -20,8 +22,13 @@ def setup_logging():
     
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(name)s: %(message)s')
     
-    # File Handler (5MB per file, max 5 backups)
-    file_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=5)
+    # File Handler (Rotate every day at midnight)
+    file_handler = TimedRotatingFileHandler(
+        log_file, 
+        when="midnight", 
+        interval=1, 
+        backupCount=30
+    )
     file_handler.setFormatter(formatter)
     root_logger.addHandler(file_handler)
     
