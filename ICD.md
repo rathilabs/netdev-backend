@@ -92,7 +92,18 @@ Reads the full content of a specific log file.
 }
 ```
 
-### 4.6 PING
+### 4.6 DELETE_LOG
+Deletes a specific log file from the server.
+
+**Structure**:
+```json
+{
+  "command": "DELETE_LOG",
+  "filename": "server_2026-05-30.log"
+}
+```
+
+### 4.7 PING
 Heartbeat check.
 
 **Structure**:
@@ -107,7 +118,7 @@ Heartbeat check.
 ## 5. Message Structure (Backend to Frontend)
 
 ### 5.1 General Response
-Sent for `SEND_PACKET`, `CLEAR_LOGS`, and unknown commands.
+Sent for `SEND_PACKET`, `CLEAR_LOGS`, `DELETE_LOG`, and unknown commands.
 
 **Structure**:
 ```json
@@ -168,7 +179,17 @@ Returns the content of the requested log file.
 }
 ```
 
-### 5.5 `PING` Response (`PONG`)
+### 5.5 `DELETE_LOG` Response
+**Structure**:
+```json
+{
+  "status": "SUCCESS",
+  "command": "DELETE_LOG",
+  "message": "string"
+}
+```
+
+### 5.6 `PING` Response (`PONG`)
 **Structure**:
 ```json
 {

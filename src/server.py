@@ -162,6 +162,29 @@ class PacketServer:
             except Exception as e:
                 return {"status": "ERROR", "message": str(e)}
 
+        elif command == "DELETE_LOG":
+            filename = data.get("filename")
+            if not filename:
+                return {"status": "ERROR", "message": "Filename missing"}
+            
+            if ".." in filename or "/" in filename or "\\" in filename:
+                return {"status": "ERROR", "message": "Invalid filename"}
+            
+            path = os.path.join(self.log_dir, filename)
+            if not os.path.exists(path):
+                return {"status": "ERROR", "message": "File not found"}
+            
+            try:
+                os.remove(path)
+                logger.info(f"Log file {filename} deleted by {remote_addr}")
+                return {
+                    "status": "SUCCESS",
+                    "command": "DELETE_LOG",
+                    "message": f"File {filename} deleted successfully."
+                }
+            except Exception as e:
+                return {"status": "ERROR", "message": str(e)}
+
         elif command == "CLEAR_LOGS":
             logger.warning(f"Full log wipe requested by {remote_addr}")
             count = 0
