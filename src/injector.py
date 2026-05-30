@@ -126,6 +126,87 @@ class PacketInjector:
         return struct.pack('!HHLLBBHHH', 
                          src_port, dst_port, seq, ack_seq, offset_res, tcp_flags, window, check, urg_ptr)
 
+    def create_icmp_header(self, icmp_type: int = 8, code: int = 0) -> bytes:
+        """Constructs a standard 8-byte ICMP header."""
+        checksum = 0
+        identifier = 12345
+        sequence = 1
+        header = struct.pack('!BBHHH', icmp_type, code, checksum, identifier, sequence)
+        checksum = calculate_checksum(header)
+        return struct.pack('!BBHHH', icmp_type, code, checksum, identifier, sequence)
+
+    def create_igmp_header(self, igmp_type: int = 0x11, max_resp_time: int = 10, group_addr: str = '0.0.0.0') -> bytes:
+        """Constructs an 8-byte IGMP header."""
+        checksum = 0
+        group_ip = socket.inet_aton(group_addr)
+        header = struct.pack('!BBH4s', igmp_type, max_resp_time, checksum, group_ip)
+        checksum = calculate_checksum(header)
+        return struct.pack('!BBH4s', igmp_type, max_resp_time, checksum, group_ip)
+
+    def create_arp_header(self, opcode: int = 1, sender_mac: str = '00:00:00:00:00:00', 
+                          sender_ip: str = '0.0.0.0', target_mac: str = '00:00:00:00:00:00', 
+                          target_ip: str = '0.0.0.0') -> bytes:
+        """Constructs a standard 28-byte ARP header (Ethernet/IPv4)."""
+        hrd = 1 # Ethernet
+        pro = 0x0800 # IPv4
+        hln = 6
+        pln = 4
+        
+        sha = bytes.fromhex(sender_mac.replace(':', '').replace('-', ''))
+        spa = socket.inet_aton(sender_ip)
+        tha = bytes.fromhex(target_mac.replace(':', '').replace('-', ''))
+        tpa = socket.inet_aton(target_ip)
+        
+        return struct.pack('!HHBBH6s4s6s4s', hrd, pro, hln, pln, opcode, sha, spa, tha, tpa)
+
+    def update_arp_table(self, ip_addr: str, mac_addr: str) -> Tuple[bool, str]:
+        """
+        Attempts to manually update the system's ARP table.
+        Note: Requires administrative privileges. 
+        Platform-specific implementation using subprocess calls.
+        """
+        import subprocess
+        try:
+            if sys.platform == 'win32':
+                # Windows: arp -s <ip> <mac>
+                cmd = ['arp', '-s', ip_addr, mac_addr.replace(':', '-')]
+            else:
+                # Linux/macOS: arp -s <ip> <mac>
+                cmd = ['arp', '-s', ip_addr, mac_addr]
+                
+            subprocess.run(cmd, check=True, capture_output=True)
+            logger.info(f"ARP Table Updated: {ip_addr} -> {mac_addr}")
+            return True, f"ARP table entry for {ip_addr} updated successfully."
+        except subprocess.CalledProcessError as e:
+            err_msg = e.stderr.decode().strip()
+            logger.error(f"ARP Update Failed: {err_msg}")
+            return False, f"Failed to update ARP table: {err_msg}"
+        except Exception as e:
+            return False, str(e)
+
+    def ping_host(self, target_ip: str, count: int = 4) -> Dict[str, Any]:
+        """
+        Diagnostic placeholder for procedural ICMP Ping.
+        In a full implementation, this would send ICMP Echo Requests and wait for Replies.
+        """
+        return {
+            "target": target_ip,
+            "status": "NOT_IMPLEMENTED",
+            "message": "Procedural ping engine is staged for future integration."
+        }
+
+    def traceroute_host(self, target_ip: str, max_hops: int = 30) -> Dict[str, Any]:
+        """
+        Diagnostic placeholder for procedural Traceroute.
+        In a full implementation, this would iterate through TTL values (1-max_hops) 
+        and parse ICMP Time Exceeded messages.
+        """
+        return {
+            "target": target_ip,
+            "status": "NOT_IMPLEMENTED",
+            "message": "Procedural traceroute engine is staged for future integration."
+        }
+
     def send_packet(self, config: Dict[str, Any]) -> Tuple[bool, str]:
         """
         The main entry point to inject a packet based on a configuration dictionary.
@@ -140,6 +221,8 @@ class PacketInjector:
         src_port = int(config.get('srcPort', 12345))
         dst_port = int(config.get('dstPort', 80))
         
+        logger.info(f"Injection Attempt: {protocol_str} {src_ip}:{src_port} -> {dst_ip}:{dst_port}")
+        
         # Prepare Payload
         payload_hex = config.get('payloadHex')
         if payload_hex:
@@ -149,17 +232,25 @@ class PacketInjector:
 
         # Fallback for systems where raw sockets are not available/permitted
         if not self.socket:
-            if protocol_str == 'UDP':
+            if protocol_str in ['UDP', 'DNS', 'DHCP']:
                 try:
-                    logger.info("Raw socket unavailable; using UDP fallback.")
+                    logger.info(f"Raw socket unavailable; using UDP fallback for {dst_ip}:{dst_port}")
                     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as fallback_sock:
                         fallback_sock.sendto(payload, (dst_ip, dst_port))
-                    return True, "Injected via kernel fallback (standard UDP)"
+                    
+                    success_msg = f"UDP packet ({len(payload)} bytes) transferred to {dst_ip}:{dst_port} via kernel fallback"
+                    logger.info(f"Injection Success: {success_msg}")
+                    return True, success_msg
                 except Exception as e:
+                    logger.error(f"Injection Failure (Fallback): {e}")
                     return False, f"Fallback failed: {e}"
+            logger.error(f"Injection Failure: Raw socket required for {protocol_str}")
             return False, "Injection failed: Raw socket required (check root privileges)"
 
         try:
+            transport_header = b''
+            transport_proto = socket.IPPROTO_UDP # Default
+
             if protocol_str == 'UDP':
                 transport_proto = socket.IPPROTO_UDP
                 transport_header = self.create_udp_header(src_port, dst_port, len(payload))
@@ -167,7 +258,29 @@ class PacketInjector:
                 transport_proto = socket.IPPROTO_TCP
                 flags = config.get('flags', {'syn': 1})
                 transport_header = self.create_tcp_header(src_port, dst_port, flags, src_ip, dst_ip, payload)
+            elif protocol_str == 'ICMP':
+                transport_proto = socket.IPPROTO_ICMP
+                transport_header = self.create_icmp_header()
+            elif protocol_str == 'IGMP':
+                transport_proto = 2 # IGMP
+                transport_header = self.create_igmp_header()
+            elif protocol_str == 'DNS':
+                transport_proto = socket.IPPROTO_UDP
+                # For DNS, we often use specific ports if not provided
+                d_port = dst_port if dst_port != 80 else 53
+                transport_header = self.create_udp_header(src_port, d_port, len(payload))
+            elif protocol_str == 'DHCP':
+                transport_proto = socket.IPPROTO_UDP
+                s_port = src_port if src_port != 12345 else 68
+                d_port = dst_port if dst_port != 80 else 67
+                transport_header = self.create_udp_header(s_port, d_port, len(payload))
+            elif protocol_str == 'ARP':
+                # ARP is L2 and doesn't use the standard IP raw socket in the same way.
+                # In most simple Python setups, injecting raw L2 is platform-specific.
+                logger.warning("ARP injection attempted. ARP usually requires L2 access (PF_PACKET).")
+                return False, "ARP injection not yet implemented for this platform's raw L3 socket."
             else:
+                logger.error(f"Injection Failure: Unsupported protocol {protocol_str}")
                 return False, f"Unsupported protocol: {protocol_str}"
 
             ip_header = self.create_ip_header(src_ip, dst_ip, transport_proto, len(transport_header) + len(payload))
@@ -176,15 +289,27 @@ class PacketInjector:
             # Send the raw frame
             try:
                 self.socket.sendto(full_packet, (dst_ip, 0))
+                
+                # High-density success summary
+                flags_str = f" FLAGS:{config.get('flags')}" if protocol_str == 'TCP' else ""
+                success_msg = f"[TX] {protocol_str} ({len(full_packet)}B) ➔ {dst_ip}:{dst_port} | SRC:{src_ip}:{src_port} | TTL:{config.get('ttl', 64)}{flags_str}"
+                
+                logger.info(f"Injection Success: {success_msg}")
+                return True, success_msg
             except OSError as e:
                 # Specific handling for macOS raw socket limitations
                 if e.errno == 22 and sys.platform == 'darwin':
+                    logger.info(f"Injection: macOS raw socket limitation; using kernel fallback for {dst_ip}:{dst_port}")
                     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as fallback_sock:
                         fallback_sock.sendto(payload, (dst_ip, dst_port))
-                    return True, "Injected via macOS kernel fallback"
+                    
+                    success_msg = f"[FALLBACK] UDP ({len(payload)}B) ➔ {dst_ip}:{dst_port}"
+                    logger.info(f"Injection Success: {success_msg}")
+                    return True, success_msg
                 raise e
                 
             return True, "Packet injected successfully"
         except Exception as e:
-            logger.exception(f"Injection Error: {e}")
+            logger.error(f"Injection Failure: {e}")
+            logger.exception("Full traceback for injection error:")
             return False, str(e)

@@ -1,7 +1,7 @@
 # Interface Control Document (ICD) - PacketStreamer
 
 ## 1. Overview
-This document defines the communication protocol between the NetDevs Pro Frontend (React/TypeScript) and the Python Packet Injection Backend.
+This document defines the communication protocol between the NetTools Pro Frontend (React/TypeScript) and the Python Packet Injection Backend.
 
 ## 2. Communication Channel
 - **Protocol**: WebSocket

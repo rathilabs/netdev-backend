@@ -53,15 +53,14 @@ class PacketServer:
     async def handle_client(self, websocket) -> None:
         """Main connection handler managing incoming WebSocket request streams."""
         remote_addr = getattr(websocket, 'remote_address', 'Unknown')
-        logger.debug(f"Session started: {remote_addr}")
+        logger.info(f"Session started: {remote_addr}")
         
         try:
             async for raw_message in websocket:
-                logger.debug(f"Data received from {remote_addr}")
                 try:
                     data = json.loads(raw_message)
                     command = data.get("command")
-                    logger.debug(f"Command '{command}' from {remote_addr}")
+                    logger.info(f"Command '{command}' received from {remote_addr}")
                     
                     response = await self.dispatch_command(command, data, remote_addr)
                     
@@ -75,7 +74,7 @@ class PacketServer:
                         "message": "Invalid JSON format"
                     }))
         except websockets.exceptions.ConnectionClosed:
-            logger.debug(f"Session closed: {remote_addr}")
+            logger.info(f"Session closed: {remote_addr}")
         except Exception as e:
             logger.exception(f"Handler error ({remote_addr}): {e}")
 
@@ -196,6 +195,28 @@ class PacketServer:
                 "message": f"All {count} log files deleted successfully."
             }
             
+        elif command == "EXEC_PING":
+            target = data.get("target")
+            if not target:
+                return {"status": "ERROR", "message": "Target IP missing"}
+            result = self.injector.ping_host(target)
+            return {"status": "SUCCESS", "data": result}
+
+        elif command == "EXEC_TRACEROUTE":
+            target = data.get("target")
+            if not target:
+                return {"status": "ERROR", "message": "Target IP missing"}
+            result = self.injector.traceroute_host(target)
+            return {"status": "SUCCESS", "data": result}
+
+        elif command == "UPDATE_ARP":
+            ip = data.get("ip")
+            mac = data.get("mac")
+            if not ip or not mac:
+                return {"status": "ERROR", "message": "IP or MAC missing"}
+            success, message = self.injector.update_arp_table(ip, mac)
+            return {"status": "SUCCESS" if success else "ERROR", "message": message}
+
         elif command == "PING":
             return {"status": "PONG"}
             

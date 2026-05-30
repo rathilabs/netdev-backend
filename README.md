@@ -1,6 +1,6 @@
-# NetDevs Pro — Packet Injection Backend
+# NetTools Pro — Packet Injection Backend
 
-The NetDevs Pro Backend is a high-performance, asynchronous Python service designed to bridge the gap between the browser-based UI and the system's network stack. It provides raw socket capabilities to inject hand-crafted Layer 3 and Layer 4 packets directly onto the local network.
+The NetTools Pro Backend is a high-performance, asynchronous Python service designed to bridge the gap between the browser-based UI and the system's network stack. It provides raw socket capabilities to inject hand-crafted Layer 3 and Layer 4 packets directly onto the local network.
 
 ---
 
@@ -66,4 +66,4 @@ For detailed information on the WebSocket API and message structures, refer to [
 
 ---
 
-*Part of the NetDevs Pro Suite.*
+*Part of the NetTools Pro Suite.*
