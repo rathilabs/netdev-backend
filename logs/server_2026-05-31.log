@@ -1,0 +1,940 @@
+2026-05-31 18:10:28,608 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 18:10:28,608 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 18:10:28,608 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 18:10:28,619 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 18:10:28,620 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 18:10:32,940 [INFO] websockets.server: connection open
+2026-05-31 18:10:32,940 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62358)
+2026-05-31 18:10:32,954 [INFO] websockets.server: connection open
+2026-05-31 18:10:32,954 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62359)
+2026-05-31 18:10:42,951 [INFO] websockets.server: connection open
+2026-05-31 18:10:42,952 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62360)
+2026-05-31 18:10:42,979 [INFO] websockets.server: connection open
+2026-05-31 18:10:42,979 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62361)
+2026-05-31 18:10:42,982 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62361)
+2026-05-31 18:10:42,983 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'None'
+2026-05-31 18:10:52,587 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62361)
+2026-05-31 18:10:52,634 [INFO] NetworkTools.Sniffer: Sniffer stopped
+2026-05-31 18:10:52,635 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62361)
+2026-05-31 18:10:52,948 [INFO] websockets.server: connection open
+2026-05-31 18:10:52,949 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62367)
+2026-05-31 18:11:02,945 [INFO] websockets.server: connection open
+2026-05-31 18:11:02,946 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62369)
+2026-05-31 18:11:12,945 [INFO] websockets.server: connection open
+2026-05-31 18:11:12,945 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62375)
+2026-05-31 18:11:22,946 [INFO] websockets.server: connection open
+2026-05-31 18:11:22,947 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62381)
+2026-05-31 18:11:28,535 [INFO] websockets.server: connection open
+2026-05-31 18:11:28,536 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62383)
+2026-05-31 18:11:28,537 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62383)
+2026-05-31 18:11:28,537 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'http'
+2026-05-31 18:11:32,948 [INFO] websockets.server: connection open
+2026-05-31 18:11:32,948 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62384)
+2026-05-31 18:11:40,975 [INFO] websockets.server: connection open
+2026-05-31 18:11:40,975 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62385)
+2026-05-31 18:11:40,978 [INFO] NetworkTools.Server: Command 'LIST_LOGS' received from ('127.0.0.1', 62385)
+2026-05-31 18:11:42,952 [INFO] websockets.server: connection open
+2026-05-31 18:11:42,953 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62386)
+2026-05-31 18:11:42,969 [INFO] websockets.server: connection open
+2026-05-31 18:11:42,969 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62387)
+2026-05-31 18:11:42,973 [INFO] NetworkTools.Server: Command 'READ_LOG' received from ('127.0.0.1', 62387)
+2026-05-31 18:11:52,946 [INFO] websockets.server: connection open
+2026-05-31 18:11:52,947 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62388)
+2026-05-31 18:11:54,713 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62383)
+2026-05-31 18:11:54,714 [ERROR] NetworkTools.Sniffer: Error stopping sniffer: Unsupported (offline or unsupported socket)
+2026-05-31 18:11:54,715 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62383)
+2026-05-31 18:12:02,948 [INFO] websockets.server: connection open
+2026-05-31 18:12:02,949 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62392)
+2026-05-31 18:12:06,133 [INFO] websockets.server: connection open
+2026-05-31 18:12:06,134 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62393)
+2026-05-31 18:12:06,136 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62393)
+2026-05-31 18:12:06,136 [WARNING] NetworkTools.Sniffer: Sniffer already running.
+2026-05-31 18:12:06,146 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62393)
+2026-05-31 18:12:06,146 [ERROR] NetworkTools.Sniffer: Error stopping sniffer: Unsupported (offline or unsupported socket)
+2026-05-31 18:12:06,147 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62393)
+2026-05-31 18:12:12,952 [INFO] websockets.server: connection open
+2026-05-31 18:12:12,953 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62394)
+2026-05-31 18:12:23,191 [INFO] websockets.server: connection open
+2026-05-31 18:12:23,192 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62395)
+2026-05-31 18:12:33,187 [INFO] websockets.server: connection open
+2026-05-31 18:12:33,187 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62396)
+2026-05-31 18:12:42,949 [INFO] websockets.server: connection open
+2026-05-31 18:12:42,950 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62397)
+2026-05-31 18:12:52,948 [INFO] websockets.server: connection open
+2026-05-31 18:12:52,949 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62398)
+2026-05-31 18:13:02,947 [INFO] websockets.server: connection open
+2026-05-31 18:13:02,948 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62399)
+2026-05-31 18:13:13,190 [INFO] websockets.server: connection open
+2026-05-31 18:13:13,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62400)
+2026-05-31 18:13:23,189 [INFO] websockets.server: connection open
+2026-05-31 18:13:23,190 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62401)
+2026-05-31 18:13:32,947 [INFO] websockets.server: connection open
+2026-05-31 18:13:32,947 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62402)
+2026-05-31 18:13:43,185 [INFO] websockets.server: connection open
+2026-05-31 18:13:43,185 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62403)
+2026-05-31 18:13:53,190 [INFO] websockets.server: connection open
+2026-05-31 18:13:53,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62404)
+2026-05-31 18:14:03,190 [INFO] websockets.server: connection open
+2026-05-31 18:14:03,190 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62407)
+2026-05-31 18:14:12,962 [INFO] websockets.server: connection open
+2026-05-31 18:14:12,962 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62408)
+2026-05-31 18:14:23,190 [INFO] websockets.server: connection open
+2026-05-31 18:14:23,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62409)
+2026-05-31 18:14:33,190 [INFO] websockets.server: connection open
+2026-05-31 18:14:33,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62411)
+2026-05-31 18:14:43,191 [INFO] websockets.server: connection open
+2026-05-31 18:14:43,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62416)
+2026-05-31 18:14:53,198 [INFO] websockets.server: connection open
+2026-05-31 18:14:53,199 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62418)
+2026-05-31 18:15:03,188 [INFO] websockets.server: connection open
+2026-05-31 18:15:03,189 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62419)
+2026-05-31 18:15:13,184 [INFO] websockets.server: connection open
+2026-05-31 18:15:13,184 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62421)
+2026-05-31 18:15:21,307 [INFO] websockets.server: connection open
+2026-05-31 18:15:21,308 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62431)
+2026-05-31 18:15:21,321 [INFO] websockets.server: connection open
+2026-05-31 18:15:21,321 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62432)
+2026-05-31 18:15:32,192 [INFO] websockets.server: connection open
+2026-05-31 18:15:32,192 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62434)
+2026-05-31 18:15:42,188 [INFO] websockets.server: connection open
+2026-05-31 18:15:42,189 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62439)
+2026-05-31 18:15:52,190 [INFO] websockets.server: connection open
+2026-05-31 18:15:52,190 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62440)
+2026-05-31 18:16:02,189 [INFO] websockets.server: connection open
+2026-05-31 18:16:02,189 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62442)
+2026-05-31 18:16:12,186 [INFO] websockets.server: connection open
+2026-05-31 18:16:12,187 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62448)
+2026-05-31 18:16:22,188 [INFO] websockets.server: connection open
+2026-05-31 18:16:22,188 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62451)
+2026-05-31 18:16:38,190 [INFO] websockets.server: connection open
+2026-05-31 18:16:38,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62457)
+2026-05-31 18:17:38,191 [INFO] websockets.server: connection open
+2026-05-31 18:17:38,192 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62468)
+2026-05-31 18:18:38,193 [INFO] websockets.server: connection open
+2026-05-31 18:18:38,194 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62469)
+2026-05-31 18:19:38,192 [INFO] websockets.server: connection open
+2026-05-31 18:19:38,193 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62470)
+2026-05-31 18:20:38,192 [INFO] websockets.server: connection open
+2026-05-31 18:20:38,193 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62471)
+2026-05-31 18:21:38,193 [INFO] websockets.server: connection open
+2026-05-31 18:21:38,193 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62472)
+2026-05-31 18:22:38,194 [INFO] websockets.server: connection open
+2026-05-31 18:22:38,195 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62473)
+2026-05-31 18:23:38,194 [INFO] websockets.server: connection open
+2026-05-31 18:23:38,194 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62474)
+2026-05-31 18:24:38,193 [INFO] websockets.server: connection open
+2026-05-31 18:24:38,194 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62475)
+2026-05-31 18:24:40,002 [INFO] websockets.server: connection open
+2026-05-31 18:24:40,002 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62487)
+2026-05-31 18:24:40,017 [INFO] websockets.server: connection open
+2026-05-31 18:24:40,018 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62488)
+2026-05-31 18:25:18,693 [INFO] websockets.server: connection open
+2026-05-31 18:25:18,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62489)
+2026-05-31 18:25:28,693 [INFO] websockets.server: connection open
+2026-05-31 18:25:28,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62490)
+2026-05-31 18:25:38,694 [INFO] websockets.server: connection open
+2026-05-31 18:25:38,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62491)
+2026-05-31 18:25:48,693 [INFO] websockets.server: connection open
+2026-05-31 18:25:48,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62492)
+2026-05-31 18:25:58,693 [INFO] websockets.server: connection open
+2026-05-31 18:25:58,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62493)
+2026-05-31 18:43:45,697 [INFO] websockets.server: connection open
+2026-05-31 18:43:45,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62494)
+2026-05-31 18:44:43,692 [INFO] websockets.server: connection open
+2026-05-31 18:44:43,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62495)
+2026-05-31 18:45:43,692 [INFO] websockets.server: connection open
+2026-05-31 18:45:43,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62496)
+2026-05-31 18:46:43,692 [INFO] websockets.server: connection open
+2026-05-31 18:46:43,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62497)
+2026-05-31 18:47:43,692 [INFO] websockets.server: connection open
+2026-05-31 18:47:43,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62498)
+2026-05-31 18:48:43,693 [INFO] websockets.server: connection open
+2026-05-31 18:48:43,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62499)
+2026-05-31 18:49:43,693 [INFO] websockets.server: connection open
+2026-05-31 18:49:43,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62501)
+2026-05-31 18:50:43,694 [INFO] websockets.server: connection open
+2026-05-31 18:50:43,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62502)
+2026-05-31 18:51:43,694 [INFO] websockets.server: connection open
+2026-05-31 18:51:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62503)
+2026-05-31 18:52:43,695 [INFO] websockets.server: connection open
+2026-05-31 18:52:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62504)
+2026-05-31 18:53:43,695 [INFO] websockets.server: connection open
+2026-05-31 18:53:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62505)
+2026-05-31 18:54:43,698 [INFO] websockets.server: connection open
+2026-05-31 18:54:43,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62506)
+2026-05-31 18:55:43,695 [INFO] websockets.server: connection open
+2026-05-31 18:55:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62507)
+2026-05-31 18:56:43,696 [INFO] websockets.server: connection open
+2026-05-31 18:56:43,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62508)
+2026-05-31 18:57:43,696 [INFO] websockets.server: connection open
+2026-05-31 18:57:43,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62509)
+2026-05-31 18:58:43,696 [INFO] websockets.server: connection open
+2026-05-31 18:58:43,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62510)
+2026-05-31 18:59:43,696 [INFO] websockets.server: connection open
+2026-05-31 18:59:43,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62511)
+2026-05-31 19:00:43,695 [INFO] websockets.server: connection open
+2026-05-31 19:00:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62512)
+2026-05-31 19:01:43,694 [INFO] websockets.server: connection open
+2026-05-31 19:01:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62513)
+2026-05-31 19:02:43,694 [INFO] websockets.server: connection open
+2026-05-31 19:02:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62514)
+2026-05-31 19:03:43,695 [INFO] websockets.server: connection open
+2026-05-31 19:03:43,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62515)
+2026-05-31 19:04:43,703 [INFO] websockets.server: connection open
+2026-05-31 19:04:43,703 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62516)
+2026-05-31 19:05:43,695 [INFO] websockets.server: connection open
+2026-05-31 19:05:43,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62517)
+2026-05-31 19:06:43,695 [INFO] websockets.server: connection open
+2026-05-31 19:06:43,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62518)
+2026-05-31 19:07:43,696 [INFO] websockets.server: connection open
+2026-05-31 19:07:43,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62519)
+2026-05-31 19:08:43,696 [INFO] websockets.server: connection open
+2026-05-31 19:08:43,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62520)
+2026-05-31 19:09:43,696 [INFO] websockets.server: connection open
+2026-05-31 19:09:43,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62521)
+2026-05-31 19:10:43,694 [INFO] websockets.server: connection open
+2026-05-31 19:10:43,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62523)
+2026-05-31 19:10:54,364 [INFO] websockets.server: connection open
+2026-05-31 19:10:54,365 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62524)
+2026-05-31 19:10:55,508 [INFO] websockets.server: connection open
+2026-05-31 19:10:55,508 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62525)
+2026-05-31 19:10:56,787 [INFO] websockets.server: connection open
+2026-05-31 19:10:56,788 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62540)
+2026-05-31 19:10:56,801 [INFO] websockets.server: connection open
+2026-05-31 19:10:56,802 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62541)
+2026-05-31 19:10:58,172 [INFO] websockets.server: connection open
+2026-05-31 19:10:58,172 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62542)
+2026-05-31 19:10:58,184 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62542)
+2026-05-31 19:10:58,184 [ERROR] NetworkTools.Server: Unknown command: LIST_INTERFACES
+2026-05-31 19:10:58,191 [INFO] websockets.server: connection open
+2026-05-31 19:10:58,191 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62543)
+2026-05-31 19:10:58,192 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62543)
+2026-05-31 19:10:58,192 [ERROR] NetworkTools.Server: Unknown command: LIST_INTERFACES
+2026-05-31 19:11:01,688 [INFO] websockets.server: connection open
+2026-05-31 19:11:01,689 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62544)
+2026-05-31 19:11:01,690 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62544)
+2026-05-31 19:11:01,690 [WARNING] NetworkTools.Sniffer: Sniffer already running.
+2026-05-31 19:11:01,698 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62544)
+2026-05-31 19:11:01,698 [ERROR] NetworkTools.Sniffer: Error stopping sniffer: Unsupported (offline or unsupported socket)
+2026-05-31 19:11:01,699 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62544)
+2026-05-31 19:11:05,463 [INFO] websockets.server: connection open
+2026-05-31 19:11:05,463 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62545)
+2026-05-31 19:11:05,464 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62545)
+2026-05-31 19:11:05,464 [WARNING] NetworkTools.Sniffer: Sniffer already running.
+2026-05-31 19:11:05,472 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62545)
+2026-05-31 19:11:05,472 [ERROR] NetworkTools.Sniffer: Error stopping sniffer: Unsupported (offline or unsupported socket)
+2026-05-31 19:11:05,473 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62545)
+2026-05-31 19:11:06,791 [INFO] websockets.server: connection open
+2026-05-31 19:11:06,791 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62546)
+2026-05-31 19:11:16,793 [INFO] websockets.server: connection open
+2026-05-31 19:11:16,794 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62547)
+2026-05-31 19:11:26,791 [INFO] websockets.server: connection open
+2026-05-31 19:11:26,792 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62548)
+2026-05-31 19:11:30,611 [INFO] websockets.server: connection open
+2026-05-31 19:11:30,612 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62549)
+2026-05-31 19:11:30,612 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62549)
+2026-05-31 19:11:30,613 [WARNING] NetworkTools.Sniffer: Sniffer already running.
+2026-05-31 19:11:30,621 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62549)
+2026-05-31 19:11:30,622 [ERROR] NetworkTools.Sniffer: Error stopping sniffer: Unsupported (offline or unsupported socket)
+2026-05-31 19:11:30,622 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62549)
+2026-05-31 19:11:31,870 [INFO] websockets.server: connection open
+2026-05-31 19:11:31,870 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62550)
+2026-05-31 19:11:31,871 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62550)
+2026-05-31 19:11:31,871 [WARNING] NetworkTools.Sniffer: Sniffer already running.
+2026-05-31 19:11:31,880 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62550)
+2026-05-31 19:11:31,881 [ERROR] NetworkTools.Sniffer: Error stopping sniffer: Unsupported (offline or unsupported socket)
+2026-05-31 19:11:31,882 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62550)
+2026-05-31 19:11:34,514 [INFO] websockets.server: connection open
+2026-05-31 19:11:34,514 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62565)
+2026-05-31 19:11:34,529 [INFO] websockets.server: connection open
+2026-05-31 19:11:34,530 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62566)
+2026-05-31 19:11:38,016 [INFO] websockets.server: server closing
+2026-05-31 19:11:38,017 [INFO] websockets.server: server closed
+2026-05-31 19:11:38,017 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:11:46,557 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:11:46,557 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:11:46,557 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:11:46,568 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:11:46,568 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:11:54,688 [INFO] websockets.server: connection open
+2026-05-31 19:11:54,688 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62568)
+2026-05-31 19:12:00,960 [INFO] websockets.server: connection open
+2026-05-31 19:12:00,960 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62587)
+2026-05-31 19:12:00,974 [INFO] websockets.server: connection open
+2026-05-31 19:12:00,974 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62588)
+2026-05-31 19:12:02,801 [INFO] websockets.server: connection open
+2026-05-31 19:12:02,801 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62589)
+2026-05-31 19:12:02,805 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62589)
+2026-05-31 19:12:02,834 [INFO] websockets.server: connection open
+2026-05-31 19:12:02,834 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62590)
+2026-05-31 19:12:02,835 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62590)
+2026-05-31 19:12:10,103 [INFO] websockets.server: connection open
+2026-05-31 19:12:10,103 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62591)
+2026-05-31 19:12:10,105 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62591)
+2026-05-31 19:12:10,106 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'tcp'
+2026-05-31 19:12:10,964 [INFO] websockets.server: connection open
+2026-05-31 19:12:10,964 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62592)
+2026-05-31 19:12:20,969 [INFO] websockets.server: connection open
+2026-05-31 19:12:20,969 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62593)
+2026-05-31 19:12:24,789 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62591)
+2026-05-31 19:12:24,794 [INFO] NetworkTools.Sniffer: Sniffer stopped successfully
+2026-05-31 19:12:24,795 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62591)
+2026-05-31 19:12:30,966 [INFO] websockets.server: connection open
+2026-05-31 19:12:30,966 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62594)
+2026-05-31 19:12:41,694 [INFO] websockets.server: connection open
+2026-05-31 19:12:41,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62595)
+2026-05-31 19:12:51,695 [INFO] websockets.server: connection open
+2026-05-31 19:12:51,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62596)
+2026-05-31 19:13:00,966 [INFO] websockets.server: connection open
+2026-05-31 19:13:00,966 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62597)
+2026-05-31 19:13:09,617 [INFO] websockets.server: connection open
+2026-05-31 19:13:09,617 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62602)
+2026-05-31 19:13:09,618 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62602)
+2026-05-31 19:13:09,619 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'icmp'
+2026-05-31 19:13:10,968 [INFO] websockets.server: connection open
+2026-05-31 19:13:10,968 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62603)
+2026-05-31 19:13:19,056 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62602)
+2026-05-31 19:13:19,102 [INFO] NetworkTools.Sniffer: Sniffer stopped successfully
+2026-05-31 19:13:19,103 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62602)
+2026-05-31 19:13:20,969 [INFO] websockets.server: connection open
+2026-05-31 19:13:20,970 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62605)
+2026-05-31 19:13:31,696 [INFO] websockets.server: connection open
+2026-05-31 19:13:31,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62607)
+2026-05-31 19:13:41,694 [INFO] websockets.server: connection open
+2026-05-31 19:13:41,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62608)
+2026-05-31 19:13:51,693 [INFO] websockets.server: connection open
+2026-05-31 19:13:51,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62609)
+2026-05-31 19:14:00,968 [INFO] websockets.server: connection open
+2026-05-31 19:14:00,969 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62610)
+2026-05-31 19:14:10,370 [INFO] websockets.server: connection open
+2026-05-31 19:14:10,371 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62614)
+2026-05-31 19:14:10,384 [INFO] websockets.server: connection open
+2026-05-31 19:14:10,384 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62615)
+2026-05-31 19:14:10,965 [INFO] websockets.server: connection open
+2026-05-31 19:14:10,965 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62616)
+2026-05-31 19:14:12,712 [INFO] websockets.server: connection open
+2026-05-31 19:14:12,713 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62617)
+2026-05-31 19:14:12,717 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62617)
+2026-05-31 19:14:12,726 [INFO] websockets.server: connection open
+2026-05-31 19:14:12,726 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62618)
+2026-05-31 19:14:12,729 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62618)
+2026-05-31 19:14:15,384 [INFO] websockets.server: connection open
+2026-05-31 19:14:15,384 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62619)
+2026-05-31 19:14:21,689 [INFO] websockets.server: connection open
+2026-05-31 19:14:21,689 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62620)
+2026-05-31 19:14:30,969 [INFO] websockets.server: connection open
+2026-05-31 19:14:30,969 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62621)
+2026-05-31 19:14:40,967 [INFO] websockets.server: connection open
+2026-05-31 19:14:40,968 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62622)
+2026-05-31 19:14:51,695 [INFO] websockets.server: connection open
+2026-05-31 19:14:51,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62623)
+2026-05-31 19:14:54,302 [INFO] websockets.server: connection open
+2026-05-31 19:14:54,302 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62638)
+2026-05-31 19:14:54,316 [INFO] websockets.server: connection open
+2026-05-31 19:14:54,317 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62639)
+2026-05-31 19:14:56,441 [INFO] websockets.server: connection open
+2026-05-31 19:14:56,441 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62640)
+2026-05-31 19:14:56,448 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62640)
+2026-05-31 19:14:56,455 [INFO] websockets.server: connection open
+2026-05-31 19:14:56,456 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62641)
+2026-05-31 19:14:56,457 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62641)
+2026-05-31 19:14:59,638 [INFO] websockets.server: connection open
+2026-05-31 19:14:59,638 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62642)
+2026-05-31 19:14:59,641 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62642)
+2026-05-31 19:14:59,642 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'icmp'
+2026-05-31 19:15:02,072 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62642)
+2026-05-31 19:15:02,114 [INFO] NetworkTools.Sniffer: Sniffer stopped successfully
+2026-05-31 19:15:02,116 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62642)
+2026-05-31 19:15:03,706 [INFO] websockets.server: connection open
+2026-05-31 19:15:03,706 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62643)
+2026-05-31 19:15:03,707 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62643)
+2026-05-31 19:15:03,708 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'tcp port 80 or port 443 or port 8080'
+2026-05-31 19:15:04,305 [INFO] websockets.server: connection open
+2026-05-31 19:15:04,306 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62644)
+2026-05-31 19:15:14,491 [INFO] websockets.server: connection open
+2026-05-31 19:15:14,492 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62646)
+2026-05-31 19:15:14,789 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62643)
+2026-05-31 19:15:14,840 [INFO] NetworkTools.Sniffer: Sniffer stopped successfully
+2026-05-31 19:15:14,841 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62643)
+2026-05-31 19:15:18,647 [INFO] websockets.server: connection open
+2026-05-31 19:15:18,648 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62647)
+2026-05-31 19:15:18,659 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62647)
+2026-05-31 19:15:18,660 [INFO] NetworkTools.Sniffer: Sniffer started on default with filter 'udp'
+2026-05-31 19:15:24,305 [INFO] websockets.server: connection open
+2026-05-31 19:15:24,306 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62648)
+2026-05-31 19:15:34,306 [INFO] websockets.server: connection open
+2026-05-31 19:15:34,306 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62649)
+2026-05-31 19:15:44,307 [INFO] websockets.server: connection open
+2026-05-31 19:15:44,308 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62650)
+2026-05-31 19:15:54,694 [INFO] websockets.server: connection open
+2026-05-31 19:15:54,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62651)
+2026-05-31 19:16:04,305 [INFO] websockets.server: connection open
+2026-05-31 19:16:04,305 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62652)
+2026-05-31 19:16:11,043 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62647)
+2026-05-31 19:16:11,060 [INFO] NetworkTools.Sniffer: Sniffer stopped successfully
+2026-05-31 19:16:11,061 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62647)
+2026-05-31 19:16:14,307 [INFO] websockets.server: connection open
+2026-05-31 19:16:14,309 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62653)
+2026-05-31 19:16:24,305 [INFO] websockets.server: connection open
+2026-05-31 19:16:24,305 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62654)
+2026-05-31 19:16:34,305 [INFO] websockets.server: connection open
+2026-05-31 19:16:34,305 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62655)
+2026-05-31 19:16:44,694 [INFO] websockets.server: connection open
+2026-05-31 19:16:44,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62656)
+2026-05-31 19:16:54,695 [INFO] websockets.server: connection open
+2026-05-31 19:16:54,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62657)
+2026-05-31 19:17:04,697 [INFO] websockets.server: connection open
+2026-05-31 19:17:04,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62658)
+2026-05-31 19:17:14,694 [INFO] websockets.server: connection open
+2026-05-31 19:17:14,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62659)
+2026-05-31 19:17:24,695 [INFO] websockets.server: connection open
+2026-05-31 19:17:24,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62660)
+2026-05-31 19:17:34,695 [INFO] websockets.server: connection open
+2026-05-31 19:17:34,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62661)
+2026-05-31 19:18:04,348 [INFO] websockets.server: connection open
+2026-05-31 19:18:04,349 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62662)
+2026-05-31 19:18:14,697 [INFO] websockets.server: connection open
+2026-05-31 19:18:14,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62663)
+2026-05-31 19:18:24,695 [INFO] websockets.server: connection open
+2026-05-31 19:18:24,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62664)
+2026-05-31 19:18:34,695 [INFO] websockets.server: connection open
+2026-05-31 19:18:34,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62665)
+2026-05-31 19:18:44,306 [INFO] websockets.server: connection open
+2026-05-31 19:18:44,306 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62666)
+2026-05-31 19:18:54,307 [INFO] websockets.server: connection open
+2026-05-31 19:18:54,308 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62667)
+2026-05-31 19:19:04,693 [INFO] websockets.server: connection open
+2026-05-31 19:19:04,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62668)
+2026-05-31 19:19:14,693 [INFO] websockets.server: connection open
+2026-05-31 19:19:14,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62669)
+2026-05-31 19:19:24,694 [INFO] websockets.server: connection open
+2026-05-31 19:19:24,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62670)
+2026-05-31 19:19:34,695 [INFO] websockets.server: connection open
+2026-05-31 19:19:34,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62671)
+2026-05-31 19:19:44,693 [INFO] websockets.server: connection open
+2026-05-31 19:19:44,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62672)
+2026-05-31 19:19:54,695 [INFO] websockets.server: connection open
+2026-05-31 19:19:54,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62673)
+2026-05-31 19:20:43,693 [INFO] websockets.server: connection open
+2026-05-31 19:20:43,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62678)
+2026-05-31 19:20:50,816 [INFO] websockets.server: connection open
+2026-05-31 19:20:50,817 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62688)
+2026-05-31 19:20:50,828 [INFO] websockets.server: connection open
+2026-05-31 19:20:50,828 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62689)
+2026-05-31 19:21:01,694 [INFO] websockets.server: connection open
+2026-05-31 19:21:01,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62691)
+2026-05-31 19:21:05,361 [INFO] websockets.server: connection open
+2026-05-31 19:21:05,362 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62692)
+2026-05-31 19:21:05,370 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62692)
+2026-05-31 19:21:05,376 [INFO] websockets.server: connection open
+2026-05-31 19:21:05,376 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62693)
+2026-05-31 19:21:05,378 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62693)
+2026-05-31 19:21:11,692 [INFO] websockets.server: connection open
+2026-05-31 19:21:11,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62699)
+2026-05-31 19:21:21,693 [INFO] websockets.server: connection open
+2026-05-31 19:21:21,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62704)
+2026-05-31 19:21:31,695 [INFO] websockets.server: connection open
+2026-05-31 19:21:31,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62705)
+2026-05-31 19:21:41,695 [INFO] websockets.server: connection open
+2026-05-31 19:21:41,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62706)
+2026-05-31 19:21:51,696 [INFO] websockets.server: connection open
+2026-05-31 19:21:51,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62707)
+2026-05-31 19:22:01,694 [INFO] websockets.server: connection open
+2026-05-31 19:22:01,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62710)
+2026-05-31 19:22:10,821 [INFO] websockets.server: connection open
+2026-05-31 19:22:10,822 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62711)
+2026-05-31 19:22:21,696 [INFO] websockets.server: connection open
+2026-05-31 19:22:21,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62713)
+2026-05-31 19:22:31,694 [INFO] websockets.server: connection open
+2026-05-31 19:22:31,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62715)
+2026-05-31 19:22:40,822 [INFO] websockets.server: connection open
+2026-05-31 19:22:40,823 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62717)
+2026-05-31 19:22:51,694 [INFO] websockets.server: connection open
+2026-05-31 19:22:51,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62718)
+2026-05-31 19:23:01,698 [INFO] websockets.server: connection open
+2026-05-31 19:23:01,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62720)
+2026-05-31 19:23:03,859 [INFO] websockets.server: connection open
+2026-05-31 19:23:03,859 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62730)
+2026-05-31 19:23:03,860 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62730)
+2026-05-31 19:23:11,695 [INFO] websockets.server: connection open
+2026-05-31 19:23:11,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62731)
+2026-05-31 19:23:21,689 [INFO] websockets.server: connection open
+2026-05-31 19:23:21,689 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62733)
+2026-05-31 19:23:24,250 [INFO] websockets.server: connection open
+2026-05-31 19:23:24,250 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62748)
+2026-05-31 19:23:24,264 [INFO] websockets.server: connection open
+2026-05-31 19:23:24,265 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62749)
+2026-05-31 19:23:26,155 [INFO] websockets.server: connection open
+2026-05-31 19:23:26,156 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62750)
+2026-05-31 19:23:26,164 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62750)
+2026-05-31 19:23:26,170 [INFO] websockets.server: connection open
+2026-05-31 19:23:26,170 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62751)
+2026-05-31 19:23:26,171 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62751)
+2026-05-31 19:23:29,917 [INFO] websockets.server: server closing
+2026-05-31 19:23:29,917 [INFO] websockets.server: server closed
+2026-05-31 19:23:29,918 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:23:35,088 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:23:35,088 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:23:35,088 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:23:35,096 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:23:35,096 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:23:40,591 [INFO] websockets.server: connection open
+2026-05-31 19:23:40,591 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62769)
+2026-05-31 19:23:40,604 [INFO] websockets.server: connection open
+2026-05-31 19:23:40,604 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62770)
+2026-05-31 19:23:41,958 [INFO] websockets.server: connection open
+2026-05-31 19:23:41,958 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62771)
+2026-05-31 19:23:41,968 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62771)
+2026-05-31 19:23:41,970 [INFO] websockets.server: connection open
+2026-05-31 19:23:41,970 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62772)
+2026-05-31 19:23:41,971 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62772)
+2026-05-31 19:23:46,824 [INFO] websockets.server: connection open
+2026-05-31 19:23:46,824 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62773)
+2026-05-31 19:23:46,825 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62773)
+2026-05-31 19:23:46,826 [ERROR] NetworkTools.Server: Handler error (('127.0.0.1', 62773)): 'PacketServer' object has no attribute 'sniffer'
+Traceback (most recent call last):
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 69, in handle_client
+    response = await self.dispatch_command(command, data, remote_addr, websocket)
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 231, in dispatch_command
+    return {"status": "PONG"}
+AttributeError: 'PacketServer' object has no attribute 'sniffer'
+2026-05-31 19:23:50,573 [INFO] websockets.server: connection open
+2026-05-31 19:23:50,574 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62774)
+2026-05-31 19:23:53,006 [INFO] websockets.server: connection open
+2026-05-31 19:23:53,006 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62776)
+2026-05-31 19:23:53,007 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62776)
+2026-05-31 19:23:53,007 [ERROR] NetworkTools.Server: Handler error (('127.0.0.1', 62776)): 'PacketServer' object has no attribute 'sniffer'
+Traceback (most recent call last):
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 69, in handle_client
+    response = await self.dispatch_command(command, data, remote_addr, websocket)
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 231, in dispatch_command
+    return {"status": "PONG"}
+AttributeError: 'PacketServer' object has no attribute 'sniffer'
+2026-05-31 19:24:00,695 [INFO] websockets.server: connection open
+2026-05-31 19:24:00,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62777)
+2026-05-31 19:24:10,695 [INFO] websockets.server: connection open
+2026-05-31 19:24:10,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62783)
+2026-05-31 19:24:20,692 [INFO] websockets.server: connection open
+2026-05-31 19:24:20,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62784)
+2026-05-31 19:24:25,418 [INFO] websockets.server: server closing
+2026-05-31 19:24:25,419 [INFO] websockets.server: server closed
+2026-05-31 19:24:25,419 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:24:27,091 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:24:27,091 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:24:27,091 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:24:27,100 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:24:27,100 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:24:30,571 [INFO] websockets.server: connection open
+2026-05-31 19:24:30,572 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62785)
+2026-05-31 19:24:32,340 [INFO] websockets.server: connection open
+2026-05-31 19:24:32,340 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62786)
+2026-05-31 19:24:32,341 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62786)
+2026-05-31 19:24:32,341 [INFO] NetworkTools.Sniffer: Aggregating sniffer started on default
+2026-05-31 19:24:36,745 [INFO] websockets.server: connection open
+2026-05-31 19:24:36,746 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62801)
+2026-05-31 19:24:36,759 [INFO] websockets.server: connection open
+2026-05-31 19:24:36,760 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62802)
+2026-05-31 19:24:37,789 [INFO] websockets.server: connection open
+2026-05-31 19:24:37,789 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62803)
+2026-05-31 19:24:37,793 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62803)
+2026-05-31 19:24:37,803 [INFO] websockets.server: connection open
+2026-05-31 19:24:37,803 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62804)
+2026-05-31 19:24:37,804 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62804)
+2026-05-31 19:24:39,048 [INFO] websockets.server: connection open
+2026-05-31 19:24:39,049 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62805)
+2026-05-31 19:24:39,050 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62805)
+2026-05-31 19:24:47,366 [INFO] websockets.server: connection open
+2026-05-31 19:24:47,366 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62806)
+2026-05-31 19:24:55,194 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62805)
+2026-05-31 19:24:55,195 [INFO] NetworkTools.Sniffer: Sniffer and aggregator stopped
+2026-05-31 19:24:55,198 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62805)
+2026-05-31 19:24:56,749 [INFO] websockets.server: connection open
+2026-05-31 19:24:56,749 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62807)
+2026-05-31 19:25:00,635 [INFO] websockets.server: connection open
+2026-05-31 19:25:00,636 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62808)
+2026-05-31 19:25:00,636 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62808)
+2026-05-31 19:25:00,637 [INFO] NetworkTools.Sniffer: Aggregating sniffer started on default
+2026-05-31 19:25:07,691 [INFO] websockets.server: connection open
+2026-05-31 19:25:07,691 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62810)
+2026-05-31 19:25:16,748 [INFO] websockets.server: connection open
+2026-05-31 19:25:16,749 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62811)
+2026-05-31 19:25:27,695 [INFO] websockets.server: connection open
+2026-05-31 19:25:27,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62812)
+2026-05-31 19:25:37,695 [INFO] websockets.server: connection open
+2026-05-31 19:25:37,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62813)
+2026-05-31 19:25:47,697 [INFO] websockets.server: connection open
+2026-05-31 19:25:47,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62814)
+2026-05-31 19:25:57,696 [INFO] websockets.server: connection open
+2026-05-31 19:25:57,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62815)
+2026-05-31 19:26:07,696 [INFO] websockets.server: connection open
+2026-05-31 19:26:07,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62816)
+2026-05-31 19:26:17,698 [INFO] websockets.server: connection open
+2026-05-31 19:26:17,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62817)
+2026-05-31 19:26:43,694 [INFO] websockets.server: connection open
+2026-05-31 19:26:43,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62820)
+2026-05-31 19:27:43,693 [INFO] websockets.server: connection open
+2026-05-31 19:27:43,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62825)
+2026-05-31 19:27:46,746 [INFO] websockets.server: connection open
+2026-05-31 19:27:46,746 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62826)
+2026-05-31 19:27:47,701 [INFO] websockets.server: connection open
+2026-05-31 19:27:47,702 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62841)
+2026-05-31 19:27:47,714 [INFO] websockets.server: connection open
+2026-05-31 19:27:47,715 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62842)
+2026-05-31 19:27:50,520 [INFO] websockets.server: connection open
+2026-05-31 19:27:50,522 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62844)
+2026-05-31 19:27:50,534 [INFO] websockets.server: connection open
+2026-05-31 19:27:50,535 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62845)
+2026-05-31 19:27:51,587 [INFO] websockets.server: connection open
+2026-05-31 19:27:51,590 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62849)
+2026-05-31 19:27:51,590 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62849)
+2026-05-31 19:27:51,603 [INFO] websockets.server: connection open
+2026-05-31 19:27:51,603 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62850)
+2026-05-31 19:27:51,604 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62850)
+2026-05-31 19:27:55,532 [INFO] websockets.server: connection open
+2026-05-31 19:27:55,534 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62851)
+2026-05-31 19:27:56,704 [INFO] websockets.server: connection open
+2026-05-31 19:27:56,705 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62852)
+2026-05-31 19:27:56,706 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62852)
+2026-05-31 19:27:57,702 [INFO] websockets.server: connection open
+2026-05-31 19:27:57,702 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62853)
+2026-05-31 19:28:02,452 [INFO] websockets.server: connection open
+2026-05-31 19:28:02,452 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62858)
+2026-05-31 19:28:02,464 [INFO] websockets.server: connection open
+2026-05-31 19:28:02,464 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62859)
+2026-05-31 19:28:05,591 [INFO] websockets.server: connection open
+2026-05-31 19:28:05,591 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62860)
+2026-05-31 19:28:05,597 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62860)
+2026-05-31 19:28:05,607 [INFO] websockets.server: connection open
+2026-05-31 19:28:05,607 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62861)
+2026-05-31 19:28:05,608 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62861)
+2026-05-31 19:28:12,462 [INFO] websockets.server: connection open
+2026-05-31 19:28:12,463 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62867)
+2026-05-31 19:28:23,933 [INFO] websockets.server: connection open
+2026-05-31 19:28:23,933 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62883)
+2026-05-31 19:28:23,947 [INFO] websockets.server: connection open
+2026-05-31 19:28:23,948 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62884)
+2026-05-31 19:28:33,934 [INFO] websockets.server: connection open
+2026-05-31 19:28:33,935 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62885)
+2026-05-31 19:28:43,937 [INFO] websockets.server: connection open
+2026-05-31 19:28:43,938 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62886)
+2026-05-31 19:28:53,961 [INFO] websockets.server: connection open
+2026-05-31 19:28:53,961 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62887)
+2026-05-31 19:28:57,620 [INFO] websockets.server: connection open
+2026-05-31 19:28:57,620 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62902)
+2026-05-31 19:28:57,632 [INFO] websockets.server: connection open
+2026-05-31 19:28:57,632 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62903)
+2026-05-31 19:29:26,976 [INFO] websockets.server: connection open
+2026-05-31 19:29:26,977 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62920)
+2026-05-31 19:29:26,988 [INFO] websockets.server: connection open
+2026-05-31 19:29:26,989 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62921)
+2026-05-31 19:29:30,465 [INFO] websockets.server: server closing
+2026-05-31 19:29:30,466 [INFO] websockets.server: server closed
+2026-05-31 19:29:30,466 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:29:35,242 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:29:35,242 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:29:35,242 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:29:35,250 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:29:35,250 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:29:37,708 [INFO] websockets.server: connection open
+2026-05-31 19:29:37,708 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62922)
+2026-05-31 19:29:47,693 [INFO] websockets.server: connection open
+2026-05-31 19:29:47,694 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62924)
+2026-05-31 19:29:57,696 [INFO] websockets.server: connection open
+2026-05-31 19:29:57,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62926)
+2026-05-31 19:30:07,694 [INFO] websockets.server: connection open
+2026-05-31 19:30:07,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62927)
+2026-05-31 19:30:17,695 [INFO] websockets.server: connection open
+2026-05-31 19:30:17,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62933)
+2026-05-31 19:30:27,424 [INFO] websockets.server: connection open
+2026-05-31 19:30:27,424 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62935)
+2026-05-31 19:30:37,697 [INFO] websockets.server: connection open
+2026-05-31 19:30:37,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62936)
+2026-05-31 19:30:39,612 [INFO] websockets.server: connection open
+2026-05-31 19:30:39,612 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62952)
+2026-05-31 19:30:39,625 [INFO] websockets.server: connection open
+2026-05-31 19:30:39,626 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62953)
+2026-05-31 19:30:42,808 [INFO] websockets.server: connection open
+2026-05-31 19:30:42,809 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62956)
+2026-05-31 19:30:42,822 [INFO] websockets.server: connection open
+2026-05-31 19:30:42,822 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62957)
+2026-05-31 19:30:53,692 [INFO] websockets.server: connection open
+2026-05-31 19:30:53,693 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62958)
+2026-05-31 19:31:02,817 [INFO] websockets.server: connection open
+2026-05-31 19:31:02,818 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62960)
+2026-05-31 19:31:12,812 [INFO] websockets.server: connection open
+2026-05-31 19:31:12,813 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62961)
+2026-05-31 19:34:20,920 [INFO] websockets.server: server closing
+2026-05-31 19:34:20,921 [INFO] websockets.server: server closed
+2026-05-31 19:34:20,921 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:34:23,987 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:34:23,987 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:34:23,987 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:34:23,995 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:34:23,995 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:34:31,637 [INFO] websockets.server: connection open
+2026-05-31 19:34:31,638 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62984)
+2026-05-31 19:34:31,649 [INFO] websockets.server: connection open
+2026-05-31 19:34:31,649 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62985)
+2026-05-31 19:34:36,086 [INFO] websockets.server: connection open
+2026-05-31 19:34:36,086 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62987)
+2026-05-31 19:34:36,100 [INFO] websockets.server: connection open
+2026-05-31 19:34:36,100 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62988)
+2026-05-31 19:34:42,372 [INFO] websockets.server: connection open
+2026-05-31 19:34:42,372 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62989)
+2026-05-31 19:34:42,383 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62989)
+2026-05-31 19:34:42,386 [INFO] websockets.server: connection open
+2026-05-31 19:34:42,387 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62990)
+2026-05-31 19:34:42,389 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 62990)
+2026-05-31 19:34:46,089 [INFO] websockets.server: connection open
+2026-05-31 19:34:46,090 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62991)
+2026-05-31 19:34:47,028 [INFO] websockets.server: connection open
+2026-05-31 19:34:47,029 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62992)
+2026-05-31 19:34:47,031 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62992)
+2026-05-31 19:34:47,033 [INFO] NetworkTools.Sniffer: Aggregating sniffer started on default
+2026-05-31 19:34:47,042 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62992)
+2026-05-31 19:34:47,095 [INFO] NetworkTools.Sniffer: Sniffer and aggregator stopped
+2026-05-31 19:34:47,097 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 62992)
+2026-05-31 19:34:47,098 [ERROR] websockets.server: opening handshake failed
+Traceback (most recent call last):
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 175, in __aenter__
+    return await self.gen.__anext__()
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2026-05-31 19:34:50,718 [INFO] websockets.server: connection open
+2026-05-31 19:34:50,720 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 62994)
+2026-05-31 19:34:50,721 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 62994)
+2026-05-31 19:34:50,722 [INFO] NetworkTools.Sniffer: Aggregating sniffer started on default
+2026-05-31 19:34:50,730 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 62994)
+2026-05-31 19:35:49,184 [INFO] websockets.server: server closing
+2026-05-31 19:35:49,185 [INFO] websockets.server: server closed
+2026-05-31 19:35:49,185 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:35:49,205 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<Server.conn_handler() done, defined at /Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py:343> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/Users/ramesh/Documents/proj/tools/server/main.py", line 61, in <module>
+    asyncio.run(main())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 69, in handle_client
+    response = await self.dispatch_command(command, data, remote_addr, websocket)
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 228, in dispatch_command
+    return await self.sniffer_handler.handle_command(command, data, self.active_connections, loop)
+  File "/Users/ramesh/Documents/proj/tools/server/src/sniffer_handler.py", line 43, in handle_command
+    success, msg = self.sniffer.stop()
+  File "/Users/ramesh/Documents/proj/tools/server/src/sniffer.py", line 154, in stop
+    self.sniffer.stop()
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/scapy/sendrecv.py", line 1406, in stop
+    self.join()
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/scapy/sendrecv.py", line 1415, in join
+    self.thread.join(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 1053, in join
+    self._wait_for_tstate_lock()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 1069, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+2026-05-31 19:35:51,034 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:35:51,034 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:35:51,034 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:35:51,043 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:35:51,043 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:35:55,877 [INFO] websockets.server: connection open
+2026-05-31 19:35:55,877 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63036)
+2026-05-31 19:35:55,889 [INFO] websockets.server: connection open
+2026-05-31 19:35:55,889 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63037)
+2026-05-31 19:35:58,261 [INFO] websockets.server: connection open
+2026-05-31 19:35:58,262 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63038)
+2026-05-31 19:35:58,270 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63038)
+2026-05-31 19:35:58,274 [INFO] websockets.server: connection open
+2026-05-31 19:35:58,274 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63039)
+2026-05-31 19:35:58,279 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63039)
+2026-05-31 19:36:06,692 [INFO] websockets.server: connection open
+2026-05-31 19:36:06,692 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63040)
+2026-05-31 19:36:15,849 [INFO] websockets.server: connection open
+2026-05-31 19:36:15,850 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63042)
+2026-05-31 19:36:19,124 [INFO] websockets.server: connection open
+2026-05-31 19:36:19,124 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63043)
+2026-05-31 19:36:19,126 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 63043)
+2026-05-31 19:36:19,127 [INFO] NetworkTools.Sniffer: Aggregating sniffer started on default
+2026-05-31 19:36:19,136 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 63043)
+2026-05-31 19:36:19,179 [INFO] NetworkTools.Sniffer: Sniffer and aggregator stopped
+2026-05-31 19:36:19,181 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 63043)
+2026-05-31 19:36:19,182 [ERROR] websockets.server: opening handshake failed
+Traceback (most recent call last):
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py", line 356, in conn_handler
+    await connection.handshake(
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py", line 142, in handshake
+    async with self.send_context(expected_state=CONNECTING):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 175, in __aenter__
+    return await self.gen.__anext__()
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/connection.py", line 957, in send_context
+    raise self.protocol.close_exc from original_exc
+websockets.exceptions.ConnectionClosedError: no close frame received or sent
+2026-05-31 19:36:20,892 [INFO] websockets.server: connection open
+2026-05-31 19:36:20,892 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63050)
+2026-05-31 19:36:22,007 [INFO] websockets.server: connection open
+2026-05-31 19:36:22,008 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63051)
+2026-05-31 19:36:22,009 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 63051)
+2026-05-31 19:36:22,009 [INFO] NetworkTools.Sniffer: Aggregating sniffer started on default
+2026-05-31 19:36:22,017 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 63051)
+2026-05-31 19:38:53,866 [INFO] websockets.server: server closing
+2026-05-31 19:38:53,868 [INFO] websockets.server: server closed
+2026-05-31 19:38:53,868 [INFO] NetworkTools.Main: Engine stopped.
+2026-05-31 19:38:53,891 [ERROR] asyncio: Task exception was never retrieved
+future: <Task finished name='Task-31' coro=<Server.conn_handler() done, defined at /Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py:343> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "/Users/ramesh/Documents/proj/tools/server/main.py", line 61, in <module>
+    asyncio.run(main())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 629, in run_until_complete
+    self.run_forever()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 596, in run_forever
+    self._run_once()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 1890, in _run_once
+    handle._run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/websockets/asyncio/server.py", line 376, in conn_handler
+    await self.handler(connection)
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 69, in handle_client
+    response = await self.dispatch_command(command, data, remote_addr, websocket)
+  File "/Users/ramesh/Documents/proj/tools/server/src/server.py", line 228, in dispatch_command
+    return await self.sniffer_handler.handle_command(command, data, self.active_connections, loop)
+  File "/Users/ramesh/Documents/proj/tools/server/src/sniffer_handler.py", line 43, in handle_command
+    success, msg = self.sniffer.stop()
+  File "/Users/ramesh/Documents/proj/tools/server/src/sniffer.py", line 154, in stop
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/scapy/sendrecv.py", line 1406, in stop
+    self.join()
+  File "/Users/ramesh/Library/Python/3.9/lib/python/site-packages/scapy/sendrecv.py", line 1415, in join
+    self.thread.join(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 1053, in join
+    self._wait_for_tstate_lock()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/threading.py", line 1069, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+2026-05-31 19:38:56,036 [INFO] NetworkTools.Main: Engine starting...
+2026-05-31 19:38:56,036 [INFO] NetworkTools.Server: Server listening on 0.0.0.0:8001
+2026-05-31 19:38:56,036 [INFO] NetworkTools.Server: Log directory: /Users/ramesh/Documents/proj/tools/server/logs
+2026-05-31 19:38:56,054 [INFO] websockets.server: server listening on 0.0.0.0:8001
+2026-05-31 19:38:56,054 [INFO] NetworkTools.Server: WebSocket live at ws://0.0.0.0:8001
+2026-05-31 19:39:01,664 [INFO] websockets.server: connection open
+2026-05-31 19:39:01,666 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63098)
+2026-05-31 19:39:01,680 [INFO] websockets.server: connection open
+2026-05-31 19:39:01,680 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63099)
+2026-05-31 19:39:02,599 [INFO] websockets.server: connection open
+2026-05-31 19:39:02,600 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63100)
+2026-05-31 19:39:02,612 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63100)
+2026-05-31 19:39:02,615 [INFO] websockets.server: connection open
+2026-05-31 19:39:02,616 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63101)
+2026-05-31 19:39:02,618 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63101)
+2026-05-31 19:39:07,991 [INFO] websockets.server: connection open
+2026-05-31 19:39:07,992 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63102)
+2026-05-31 19:39:07,993 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 63102)
+2026-05-31 19:39:11,696 [INFO] websockets.server: connection open
+2026-05-31 19:39:11,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63103)
+2026-05-31 19:39:21,666 [INFO] websockets.server: connection open
+2026-05-31 19:39:21,667 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63123)
+2026-05-31 19:39:26,079 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 63102)
+2026-05-31 19:39:26,081 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 63102)
+2026-05-31 19:39:28,945 [INFO] websockets.server: connection open
+2026-05-31 19:39:28,946 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63124)
+2026-05-31 19:39:28,946 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 63124)
+2026-05-31 19:39:31,667 [INFO] websockets.server: connection open
+2026-05-31 19:39:31,668 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63125)
+2026-05-31 19:39:34,078 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 63124)
+2026-05-31 19:39:34,079 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 63124)
+2026-05-31 19:39:35,871 [INFO] websockets.server: connection open
+2026-05-31 19:39:35,872 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63126)
+2026-05-31 19:39:35,873 [INFO] NetworkTools.Server: Command 'START_SNIFFER' received from ('127.0.0.1', 63126)
+2026-05-31 19:39:36,985 [INFO] NetworkTools.Server: Command 'STOP_SNIFFER' received from ('127.0.0.1', 63126)
+2026-05-31 19:39:37,041 [INFO] NetworkTools.Server: Session closed: ('127.0.0.1', 63126)
+2026-05-31 19:39:41,666 [INFO] websockets.server: connection open
+2026-05-31 19:39:41,666 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63127)
+2026-05-31 19:39:51,667 [INFO] websockets.server: connection open
+2026-05-31 19:39:51,668 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63128)
+2026-05-31 19:40:01,667 [INFO] websockets.server: connection open
+2026-05-31 19:40:01,668 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63129)
+2026-05-31 19:40:11,696 [INFO] websockets.server: connection open
+2026-05-31 19:40:11,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63130)
+2026-05-31 19:40:17,813 [INFO] websockets.server: connection open
+2026-05-31 19:40:17,814 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63145)
+2026-05-31 19:40:17,828 [INFO] websockets.server: connection open
+2026-05-31 19:40:17,828 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63146)
+2026-05-31 19:40:19,314 [INFO] websockets.server: connection open
+2026-05-31 19:40:19,315 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63147)
+2026-05-31 19:40:19,326 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63147)
+2026-05-31 19:40:19,329 [INFO] websockets.server: connection open
+2026-05-31 19:40:19,330 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63148)
+2026-05-31 19:40:19,330 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63148)
+2026-05-31 19:40:28,691 [INFO] websockets.server: connection open
+2026-05-31 19:40:28,691 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63150)
+2026-05-31 19:40:38,695 [INFO] websockets.server: connection open
+2026-05-31 19:40:38,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63152)
+2026-05-31 19:40:48,691 [INFO] websockets.server: connection open
+2026-05-31 19:40:48,692 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63157)
+2026-05-31 19:40:58,698 [INFO] websockets.server: connection open
+2026-05-31 19:40:58,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63158)
+2026-05-31 19:41:07,817 [INFO] websockets.server: connection open
+2026-05-31 19:41:07,818 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63159)
+2026-05-31 19:41:11,616 [INFO] websockets.server: connection open
+2026-05-31 19:41:11,617 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63163)
+2026-05-31 19:41:11,626 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63163)
+2026-05-31 19:41:11,628 [INFO] websockets.server: connection open
+2026-05-31 19:41:11,629 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63164)
+2026-05-31 19:41:11,633 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63164)
+2026-05-31 19:41:15,103 [INFO] websockets.server: connection open
+2026-05-31 19:41:15,103 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63165)
+2026-05-31 19:41:15,118 [INFO] websockets.server: connection open
+2026-05-31 19:41:15,118 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63166)
+2026-05-31 19:41:17,313 [INFO] websockets.server: connection open
+2026-05-31 19:41:17,313 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63167)
+2026-05-31 19:41:17,324 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63167)
+2026-05-31 19:41:17,326 [INFO] websockets.server: connection open
+2026-05-31 19:41:17,326 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63168)
+2026-05-31 19:41:17,327 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63168)
+2026-05-31 19:41:17,817 [INFO] websockets.server: connection open
+2026-05-31 19:41:17,817 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63169)
+2026-05-31 19:41:20,115 [INFO] websockets.server: connection open
+2026-05-31 19:41:20,116 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63170)
+2026-05-31 19:41:28,694 [INFO] websockets.server: connection open
+2026-05-31 19:41:28,695 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63171)
+2026-05-31 19:41:31,882 [INFO] websockets.server: connection open
+2026-05-31 19:41:31,883 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63172)
+2026-05-31 19:41:31,896 [INFO] websockets.server: connection open
+2026-05-31 19:41:31,897 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63173)
+2026-05-31 19:41:37,817 [INFO] websockets.server: connection open
+2026-05-31 19:41:37,818 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63174)
+2026-05-31 19:41:37,942 [INFO] websockets.server: connection open
+2026-05-31 19:41:37,942 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63175)
+2026-05-31 19:41:37,950 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63175)
+2026-05-31 19:41:37,955 [INFO] websockets.server: connection open
+2026-05-31 19:41:37,955 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63176)
+2026-05-31 19:41:37,958 [INFO] NetworkTools.Server: Command 'LIST_INTERFACES' received from ('127.0.0.1', 63176)
+2026-05-31 19:41:42,956 [INFO] websockets.server: connection open
+2026-05-31 19:41:42,957 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63177)
+2026-05-31 19:41:48,696 [INFO] websockets.server: connection open
+2026-05-31 19:41:48,697 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63178)
+2026-05-31 19:41:58,697 [INFO] websockets.server: connection open
+2026-05-31 19:41:58,698 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63179)
+2026-05-31 19:42:08,698 [INFO] websockets.server: connection open
+2026-05-31 19:42:08,700 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63180)
+2026-05-31 19:42:18,696 [INFO] websockets.server: connection open
+2026-05-31 19:42:18,696 [INFO] NetworkTools.Server: Session started: ('127.0.0.1', 63181)
+2026-05-31 19:42:22,534 [INFO] websockets.server: server closing
+2026-05-31 19:42:22,534 [INFO] websockets.server: server closed
+2026-05-31 19:42:22,535 [INFO] NetworkTools.Main: Engine stopped.

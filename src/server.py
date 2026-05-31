@@ -7,6 +7,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from typing import Optional, Any
 from .injector import PacketInjector
+from .sniffer_handler import SnifferHandler
 from .utils import get_log_dir
 
 logger = logging.getLogger("NetworkTools.Server")
@@ -22,6 +23,8 @@ class PacketServer:
         self.host = host
         self.port = port
         self.injector = PacketInjector()
+        self.sniffer_handler = SnifferHandler()
+        self.active_connections = set()
         
         # Determine logs directory
         self.log_dir = log_dir if log_dir else get_log_dir()
@@ -54,6 +57,7 @@ class PacketServer:
         """Main connection handler managing incoming WebSocket request streams."""
         remote_addr = getattr(websocket, 'remote_address', 'Unknown')
         logger.info(f"Session started: {remote_addr}")
+        self.active_connections.add(websocket)
         
         try:
             async for raw_message in websocket:
@@ -62,7 +66,7 @@ class PacketServer:
                     command = data.get("command")
                     logger.info(f"Command '{command}' received from {remote_addr}")
                     
-                    response = await self.dispatch_command(command, data, remote_addr)
+                    response = await self.dispatch_command(command, data, remote_addr, websocket)
                     
                     if response:
                         await websocket.send(json.dumps(response))
@@ -77,8 +81,10 @@ class PacketServer:
             logger.info(f"Session closed: {remote_addr}")
         except Exception as e:
             logger.exception(f"Handler error ({remote_addr}): {e}")
+        finally:
+            self.active_connections.remove(websocket)
 
-    async def dispatch_command(self, command: str, data: dict, remote_addr: Any) -> Optional[dict]:
+    async def dispatch_command(self, command: str, data: dict, remote_addr: Any, websocket: Any = None) -> Optional[dict]:
         """
         Routes the command to its respective business logic handler.
         Contributors can easily add new commands by extending this block.
@@ -216,6 +222,10 @@ class PacketServer:
                 return {"status": "ERROR", "message": "IP or MAC missing"}
             success, message = self.injector.update_arp_table(ip, mac)
             return {"status": "SUCCESS" if success else "ERROR", "message": message}
+
+        elif command in ["START_SNIFFER", "STOP_SNIFFER", "SNIFFER_STATUS", "LIST_INTERFACES"]:
+            loop = asyncio.get_event_loop()
+            return await self.sniffer_handler.handle_command(command, data, self.active_connections, loop)
 
         elif command == "PING":
             return {"status": "PONG"}
