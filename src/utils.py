@@ -20,7 +20,7 @@ def get_log_dir() -> str:
         return log_dir
     except OSError:
         # Fallback for single binary or read-only environments
-        log_dir = "/tmp/nettools-logs"
+        log_dir = "/tmp/networktools-logs"
         try:
             if not os.path.exists(log_dir):
                 os.makedirs(log_dir)
