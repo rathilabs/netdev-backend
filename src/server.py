@@ -83,148 +83,158 @@ class PacketServer:
         Routes the command to its respective business logic handler.
         Contributors can easily add new commands by extending this block.
         """
-        if command == "SEND_PACKET":
-            payload_config = data.get("config", {})
-            success, detail = self.injector.send_packet(payload_config)
-            
-            status = "SUCCESS" if success else "ERROR"
-            self.save_history(payload_config, status, detail)
-            
-            return {
-                "status": status,
-                "message": detail,
-                "original_command": "SEND_PACKET"
-            }
-            
-        elif command == "FETCH_LOGS":
-            history_file = self.get_current_history_file()
-            logs = []
-            if os.path.exists(history_file):
-                with open(history_file, "r") as f:
-                    lines = f.readlines()
-                    # Return last 500 logs to prevent payload overflow
-                    logs = [json.loads(line) for line in lines[-500:]]
-            
-            return {
-                "status": "SUCCESS",
-                "command": "FETCH_LOGS",
-                "data": logs[::-1] # Sort newest first
-            }
-
-        elif command == "LIST_LOGS":
-            files = []
-            for f in os.listdir(self.log_dir):
-                path = os.path.join(self.log_dir, f)
-                if os.path.isfile(path):
-                    stats = os.stat(path)
-                    files.append({
-                        "name": f,
-                        "size": stats.st_size,
-                        "modified": datetime.datetime.fromtimestamp(stats.st_mtime).isoformat()
-                    })
-            # Sort by modified date recent first
-            files.sort(key=lambda x: x["modified"], reverse=True)
-            return {
-                "status": "SUCCESS",
-                "command": "LIST_LOGS",
-                "data": files
-            }
-
-        elif command == "READ_LOG":
-            filename = data.get("filename")
-            if not filename:
-                return {"status": "ERROR", "message": "Filename missing"}
-            
-            # Basic security check to prevent path traversal
-            if ".." in filename or "/" in filename or "\\" in filename:
-                return {"status": "ERROR", "message": "Invalid filename"}
-            
-            path = os.path.join(self.log_dir, filename)
-            if not os.path.exists(path):
-                return {"status": "ERROR", "message": "File not found"}
-            
-            try:
-                with open(path, "r") as f:
-                    # Return content (could be large, but usually okay for logs)
-                    content = f.read()
-                    return {
-                        "status": "SUCCESS",
-                        "command": "READ_LOG",
-                        "filename": filename,
-                        "data": content
-                    }
-            except Exception as e:
-                return {"status": "ERROR", "message": str(e)}
-
-        elif command == "DELETE_LOG":
-            filename = data.get("filename")
-            if not filename:
-                return {"status": "ERROR", "message": "Filename missing"}
-            
-            if ".." in filename or "/" in filename or "\\" in filename:
-                return {"status": "ERROR", "message": "Invalid filename"}
-            
-            path = os.path.join(self.log_dir, filename)
-            if not os.path.exists(path):
-                return {"status": "ERROR", "message": "File not found"}
-            
-            try:
-                os.remove(path)
-                logger.info(f"Log file {filename} deleted by {remote_addr}")
+        try:
+            if command == "SEND_PACKET":
+                payload_config = data.get("config", {})
+                success, detail = self.injector.send_packet(payload_config)
+                
+                status = "SUCCESS" if success else "ERROR"
+                self.save_history(payload_config, status, detail)
+                
+                return {
+                    "status": status,
+                    "message": detail,
+                    "original_command": "SEND_PACKET"
+                }
+                
+            elif command == "FETCH_LOGS":
+                history_file = self.get_current_history_file()
+                logs = []
+                if os.path.exists(history_file):
+                    with open(history_file, "r") as f:
+                        lines = f.readlines()
+                        # Return last 500 logs to prevent payload overflow
+                        logs = [json.loads(line) for line in lines[-500:]]
+                
                 return {
                     "status": "SUCCESS",
-                    "command": "DELETE_LOG",
-                    "message": f"File {filename} deleted successfully."
+                    "command": "FETCH_LOGS",
+                    "data": logs[::-1] # Sort newest first
                 }
-            except Exception as e:
-                return {"status": "ERROR", "message": str(e)}
 
-        elif command == "CLEAR_LOGS":
-            logger.warning(f"Full log wipe requested by {remote_addr}")
-            count = 0
-            for f in os.listdir(self.log_dir):
-                path = os.path.join(self.log_dir, f)
-                try:
+            elif command == "LIST_LOGS":
+                files = []
+                if not os.path.exists(self.log_dir):
+                    os.makedirs(self.log_dir, exist_ok=True)
+                    
+                for f in os.listdir(self.log_dir):
+                    path = os.path.join(self.log_dir, f)
                     if os.path.isfile(path):
-                        os.remove(path)
-                        count += 1
+                        stats = os.stat(path)
+                        files.append({
+                            "name": f,
+                            "size": stats.st_size,
+                            "modified": datetime.datetime.fromtimestamp(stats.st_mtime).isoformat()
+                        })
+                # Sort by modified date recent first
+                files.sort(key=lambda x: x["modified"], reverse=True)
+                return {
+                    "status": "SUCCESS",
+                    "command": "LIST_LOGS",
+                    "data": files
+                }
+
+            elif command == "READ_LOG":
+                filename = data.get("filename")
+                if not filename:
+                    return {"status": "ERROR", "message": "Filename missing"}
+                
+                # Basic security check to prevent path traversal
+                if ".." in filename or "/" in filename or "\\" in filename:
+                    return {"status": "ERROR", "message": "Invalid filename"}
+                
+                path = os.path.join(self.log_dir, filename)
+                if not os.path.exists(path):
+                    return {"status": "ERROR", "message": "File not found"}
+                
+                try:
+                    with open(path, "r") as f:
+                        # Return content (could be large, but usually okay for logs)
+                        content = f.read()
+                        return {
+                            "status": "SUCCESS",
+                            "command": "READ_LOG",
+                            "filename": filename,
+                            "data": content
+                        }
                 except Exception as e:
-                    logger.error(f"Failed to delete {f}: {e}")
-            return {
-                "status": "SUCCESS",
-                "message": f"All {count} log files deleted successfully."
-            }
-            
-        elif command == "EXEC_PING":
-            target = data.get("target")
-            if not target:
-                return {"status": "ERROR", "message": "Target IP missing"}
-            result = self.injector.ping_host(target)
-            return {"status": "SUCCESS", "data": result}
+                    return {"status": "ERROR", "message": str(e)}
 
-        elif command == "EXEC_TRACEROUTE":
-            target = data.get("target")
-            if not target:
-                return {"status": "ERROR", "message": "Target IP missing"}
-            result = self.injector.traceroute_host(target)
-            return {"status": "SUCCESS", "data": result}
+            elif command == "DELETE_LOG":
+                filename = data.get("filename")
+                if not filename:
+                    return {"status": "ERROR", "message": "Filename missing"}
+                
+                if ".." in filename or "/" in filename or "\\" in filename:
+                    return {"status": "ERROR", "message": "Invalid filename"}
+                
+                path = os.path.join(self.log_dir, filename)
+                if not os.path.exists(path):
+                    return {"status": "ERROR", "message": "File not found"}
+                
+                try:
+                    os.remove(path)
+                    logger.info(f"Log file {filename} deleted by {remote_addr}")
+                    return {
+                        "status": "SUCCESS",
+                        "command": "DELETE_LOG",
+                        "message": f"File {filename} deleted successfully."
+                    }
+                except Exception as e:
+                    return {"status": "ERROR", "message": str(e)}
 
-        elif command == "UPDATE_ARP":
-            ip = data.get("ip")
-            mac = data.get("mac")
-            if not ip or not mac:
-                return {"status": "ERROR", "message": "IP or MAC missing"}
-            success, message = self.injector.update_arp_table(ip, mac)
-            return {"status": "SUCCESS" if success else "ERROR", "message": message}
+            elif command == "CLEAR_LOGS":
+                logger.warning(f"Full log wipe requested by {remote_addr}")
+                count = 0
+                for f in os.listdir(self.log_dir):
+                    path = os.path.join(self.log_dir, f)
+                    try:
+                        if os.path.isfile(path):
+                            os.remove(path)
+                            count += 1
+                    except Exception as e:
+                        logger.error(f"Failed to delete {f}: {e}")
+                return {
+                    "status": "SUCCESS",
+                    "message": f"All {count} log files deleted successfully."
+                }
+                
+            elif command == "EXEC_PING":
+                target = data.get("target")
+                if not target:
+                    return {"status": "ERROR", "message": "Target IP missing"}
+                result = self.injector.ping_host(target)
+                return {"status": "SUCCESS", "data": result}
 
-        elif command == "PING":
-            return {"status": "PONG"}
-            
-        else:
-            logger.error(f"Unknown command: {command}")
+            elif command == "EXEC_TRACEROUTE":
+                target = data.get("target")
+                if not target:
+                    return {"status": "ERROR", "message": "Target IP missing"}
+                result = self.injector.traceroute_host(target)
+                return {"status": "SUCCESS", "data": result}
+
+            elif command == "UPDATE_ARP":
+                ip = data.get("ip")
+                mac = data.get("mac")
+                if not ip or not mac:
+                    return {"status": "ERROR", "message": "IP or MAC missing"}
+                success, message = self.injector.update_arp_table(ip, mac)
+                return {"status": "SUCCESS" if success else "ERROR", "message": message}
+
+            elif command == "PING":
+                return {"status": "PONG"}
+                
+            else:
+                logger.error(f"Unknown command: {command}")
+                return {
+                    "status": "ERROR",
+                    "message": f"Unknown command scope: {command}"
+                }
+        except Exception as e:
+            logger.exception(f"Critical error dispatching '{command}': {e}")
             return {
                 "status": "ERROR",
-                "message": f"Unknown command scope: {command}"
+                "message": f"Server error: {str(e)}"
             }
 
     async def start(self) -> None:

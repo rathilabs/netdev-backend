@@ -1,17 +1,23 @@
 import os
 import logging
+import sys
 
 logger = logging.getLogger("NetworkTools.Utils")
 
 def get_log_dir() -> str:
     """
     Determines and returns the appropriate log directory.
-    Attempts local 'logs' first, falling back to '/tmp/networktools-logs' 
-    for single-binary or read-only environments.
+    Attempts local 'logs' next to executable/source first, 
+    falling back to a persistent temp dir for single-binary or read-only environments.
     """
-    # Attempt local logs directory relative to the project root
-    # We use a path relative to this file's parent's parent to reach root
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    if getattr(sys, 'frozen', False):
+        # Running as a bundle (PyInstaller/nuitka)
+        base_dir = os.path.dirname(sys.executable)
+    else:
+        # Running as a normal python script
+        # We use a path relative to this file's parent's parent to reach root
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    
     log_dir = os.path.join(base_dir, "logs")
     
     try:
