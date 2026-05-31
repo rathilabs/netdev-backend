@@ -40,7 +40,7 @@ def setup_logging():
 async def main():
     """Main application entry point."""
     setup_logging()
-    logger = logging.getLogger("NetDev.Main")
+    logger = logging.getLogger("NetworkTools.Main")
     
     logger.info("Engine starting...")
     logger.debug("Debug mode active.")

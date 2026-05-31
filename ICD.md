@@ -1,14 +1,14 @@
-# Interface Control Document (ICD) - PacketStreamer
+# Interface Control Document (ICD) - networktools-backend
 
 ## 1. Overview
-This document defines the communication protocol between the NetTools Pro Frontend (React/TypeScript) and the Python Packet Injection Backend.
+This document defines the communication protocol between the NetworkTools Frontend (React/TypeScript) and the Python Packet Injection Backend.
 
 ## 2. Communication Channel
 - **Protocol**: WebSocket
 - **Default URL**: `ws://127.0.0.1:8001`
 - **Serialization**: JSON
-- **Backend Implementation**: `backend/server.py`
-- **Frontend Implementation**: `website/src/components/PacketCrafter.tsx`, `website/src/components/LogAnalyzer.tsx`
+- **Backend Implementation**: `src/server.py`
+- **Frontend Implementation**: `https://github.com/rathilabs/networktools-frontend` (Ref: `PacketCrafter.tsx`, `LogAnalyzer.tsx`)
 
 ---
 
@@ -16,7 +16,7 @@ This document defines the communication protocol between the NetTools Pro Fronte
 1. **Connection**: Frontend initiates a WebSocket connection to the backend.
 2. **Command**: Frontend sends a JSON command object.
 3. **Execution**: Backend processes the command (e.g., injects packet, reads logs).
-4. **Persistence**: For `SEND_PACKET` commands, the backend logs the transaction to `backend/logs/packet_history.jsonl`.
+4. **Persistence**: For `SEND_PACKET` commands, the backend logs the transaction to `logs/history_YYYY-MM-DD.jsonl`.
 5. **Response**: Backend sends a JSON response object back to the frontend.
 6. **Update**: Frontend updates its state/UI based on the response.
 

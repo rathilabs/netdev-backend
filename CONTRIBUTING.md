@@ -1,6 +1,6 @@
-# Contributing to NetTools Backend
+# Contributing to networktools-backend
 
-First off, thank you for considering contributing to NetTools Backend! It's people like you that make NetTools Pro a great tool for the networking community.
+First off, thank you for considering contributing to networktools-backend! It's people like you that make NetworkTools a great tool for the networking community.
 
 ## 🚀 How Can I Contribute?
 

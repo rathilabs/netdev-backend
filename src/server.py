@@ -9,7 +9,7 @@ from typing import Optional, Any
 from .injector import PacketInjector
 from .utils import get_log_dir
 
-logger = logging.getLogger("NetDev.Server")
+logger = logging.getLogger("NetworkTools.Server")
 
 class PacketServer:
     """

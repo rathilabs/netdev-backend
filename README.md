@@ -1,6 +1,8 @@
-# NetTools Pro — Packet Injection Backend
+# networktools-backend
 
-The NetTools Pro Backend is a high-performance, asynchronous Python service designed to bridge the gap between the browser-based UI and the system's network stack. It provides raw socket capabilities to inject hand-crafted Layer 3 and Layer 4 packets directly onto the local network.
+**Website:** [networktools.me](https://networktools.me/)
+
+The NetworkTools Backend is a high-performance, asynchronous Python service designed to bridge the gap between the browser-based UI and the system's network stack. It provides raw socket capabilities to inject hand-crafted Layer 3 and Layer 4 packets directly onto the local network.
 
 ---
 
@@ -22,7 +24,7 @@ The NetTools Pro Backend is a high-performance, asynchronous Python service desi
 │   ├── server.py        <-- WebSocket API & Command Dispatcher
 │   └── __init__.py      <-- Package exports
 ├── logs/
-│   └── netdev_server.log <-- System logs
+│   └── networktools_server.log <-- System logs
 ├── ICD.md               <-- Interface Control Document (Protocol definition)
 ├── main.py              <-- Primary application entry point
 └── README.md            <-- This documentation
@@ -37,7 +39,7 @@ The NetTools Pro Backend is a high-performance, asynchronous Python service desi
 2. Download the binary for your OS (Linux/macOS).
 3. Run with root privileges:
    ```bash
-   sudo ./netdev-server
+   sudo ./networktools-server
    ```
 
 ### Option 2: Run from Source
@@ -66,4 +68,4 @@ For detailed information on the WebSocket API and message structures, refer to [
 
 ---
 
-*Part of the NetTools Pro Suite.*
+*Part of the NetworkTools Suite.*

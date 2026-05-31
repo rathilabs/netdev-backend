@@ -6,7 +6,7 @@ import sys
 from typing import Dict, Tuple, Optional, Any
 
 # Configure module-level logger
-logger = logging.getLogger("NetDev.Injector")
+logger = logging.getLogger("NetworkTools.Injector")
 
 def calculate_checksum(data: bytes) -> int:
     """

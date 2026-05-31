@@ -41,13 +41,13 @@ jobs:
         include:
           - os: ubuntu-22.04
             arch: x64
-            binary_name: backend-linux-x64
+            binary_name: networktools-server-linux-x64
           - os: ubuntu-24.04-arm
             arch: arm64
-            binary_name: backend-linux-arm64
+            binary_name: networktools-server-linux-arm64
           - os: macos-15
             arch: arm64
-            binary_name: backend-macos-arm64
+            binary_name: networktools-server-macos-arm64
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
