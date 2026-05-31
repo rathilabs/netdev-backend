@@ -1,12 +1,12 @@
 import os
 import logging
 
-logger = logging.getLogger("NetDev.Utils")
+logger = logging.getLogger("NetworkTools.Utils")
 
 def get_log_dir() -> str:
     """
     Determines and returns the appropriate log directory.
-    Attempts local 'logs' first, falling back to '/tmp/nettools-logs' 
+    Attempts local 'logs' first, falling back to '/tmp/networktools-logs' 
     for single-binary or read-only environments.
     """
     # Attempt local logs directory relative to the project root
@@ -20,7 +20,7 @@ def get_log_dir() -> str:
         return log_dir
     except OSError:
         # Fallback for single binary or read-only environments
-        log_dir = "/tmp/nettools-logs"
+        log_dir = "/tmp/networktools-logs"
         try:
             if not os.path.exists(log_dir):
                 os.makedirs(log_dir)
