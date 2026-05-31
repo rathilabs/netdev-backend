@@ -5,7 +5,7 @@ First off, thank you for considering contributing to NetTools Backend! It's peop
 ## 🚀 How Can I Contribute?
 
 ### Reporting Bugs
-*   Check the [Issues](https://github.com/rathilabs/netdev-backend/issues) page to see if the bug has already been reported.
+*   Check the [Issues](https://github.com/rathilabs/networktools-backend/issues) page to see if the bug has already been reported.
 *   If not, open a new issue. Include a clear title, a description of the bug, steps to reproduce it, and the expected vs. actual behavior.
 
 ### Suggesting Enhancements

@@ -33,7 +33,7 @@ The NetTools Pro Backend is a high-performance, asynchronous Python service desi
 ## 🛠️ Getting Started
 
 ### Option 1: Download Pre-compiled Binary (Easiest)
-1. Go to the [Releases](https://github.com/rathilabs/netdev-backend/releases) page.
+1. Go to the [Releases](https://github.com/rathilabs/networktools-backend/releases) page.
 2. Download the binary for your OS (Linux/macOS).
 3. Run with root privileges:
    ```bash
@@ -43,8 +43,8 @@ The NetTools Pro Backend is a high-performance, asynchronous Python service desi
 ### Option 2: Run from Source
 1. Clone the repository:
    ```bash
-   git clone https://github.com/rathilabs/netdev-backend.git
-   cd netdev-backend
+   git clone https://github.com/rathilabs/networktools-backend.git
+   cd networktools-backend
    ```
 2. Install dependencies:
    ```bash
